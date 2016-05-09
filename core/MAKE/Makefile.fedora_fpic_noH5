@@ -1,0 +1,103 @@
+# fedora_fpic = Fedora Core 6, mpic++, OpenMPI-1.1, FFTW2
+
+SHELL = /bin/sh
+
+# ---------------------------------------------------------------------
+# compiler/linker settings
+# specify flags and libraries needed for your compiler
+
+CC =		mpic++
+CCFLAGS =	-O2 \
+		-funroll-loops -fstrict-aliasing -Wno-unused-parameter  -Wall -W -Wno-uninitialized -g -fPIC
+SHFLAGS =	
+DEPFLAGS =	-M
+
+LINK =		mpic++
+LINKFLAGS =	-O
+LIB =           -lstdc++
+SIZE =		size
+
+ARCHIVE =	ar
+ARFLAGS =	-rcsv
+SHLIBFLAGS =	-shared
+
+# ---------------------------------------------------------------------
+# Specific settings
+# specify settings for LAMMPS features you will use
+# if you change any -D setting, do full re-compile after "make clean"
+
+# MPI library, REQUIRED
+# see discussion in doc/Section_start.html#2_2 (step 5)
+# can point to dummy MPI library in src/STUBS as in Makefile.serial
+# INC = path for mpi.h, MPI compiler settings
+# PATH = path for MPI library
+# LIB = name of MPI library
+
+MPI_INC =  
+MPI_PATH = 
+MPI_LIB =	
+
+# FFT library, OPTIONAL
+# see discussion in doc/Section_start.html#2_2 (step 6)
+# can be left blank to use provided KISS FFT library
+# INC = -DFFT setting, e.g. -DFFT_FFTW, FFT compiler settings
+# PATH = path for FFT library
+# LIB = name of FFT library
+
+FFT_INC =       
+FFT_PATH = 
+FFT_LIB =	
+
+# ---------------------------------------------------------------------
+
+# Third party libraries
+# see discussion in doc/Section_start.html#2_2 (step 7)
+# only needed if -DLAMMPS_JPEG or -DLAMMPS_PNG listed with LMP_INC
+# INC = path(s) to header files for third party software
+# PATH = 
+# LIB = name(s) of third party libraries to be linked
+
+THIRDPARTY_INC =  -I$(C3PO_SRC_DIR)/include -I$(C3PO_QT5_INC)  
+THIRDPARTY_PATH = 	
+THIRDPARTY_LIB =	-L$(C3PO_INST_DIR)/lib64  -L$(C3PO_INST_DIR)/lib -L$(C3PO_QT5_LIB) -lQt5Core  
+
+# ---------------------------------------------------------------------
+# build rules and dependencies
+# no need to edit this section
+
+EXTRA_INC = $(PKG_INC) $(MPI_INC) $(FFT_INC) $(JPG_INC) $(PKG_SYSINC)
+EXTRA_PATH = $(PKG_PATH) $(MPI_PATH) $(FFT_PATH) $(JPG_PATH) $(PKG_SYSPATH)
+EXTRA_LIB = $(PKG_LIB) $(MPI_LIB) $(FFT_LIB) $(JPG_LIB) $(PKG_SYSLIB)
+
+# Path to src files
+
+vpath %.cpp ..
+vpath %.h ..
+
+# Link target
+
+$(EXE):	$(OBJ)
+	$(LINK) $(LINKFLAGS) $(EXTRA_PATH) $(THIRDPARTY_PATH) $(OBJ) $(EXTRA_LIB) $(THIRDPARTY_LIB) $(LIB) -o $(EXE)
+	$(SIZE) $(EXE)
+
+# Library targets
+
+lib:	$(OBJ)
+	$(ARCHIVE) $(ARFLAGS) $(EXE) $(OBJ)
+
+shlib:	$(OBJ)
+	$(CC) $(CCFLAGS) $(SHFLAGS) $(SHLIBFLAGS) $(EXTRA_PATH) $(THIRDPARTY_PATH) -o $(EXE) \
+        $(OBJ) $(EXTRA_LIB) $(THIRDPARTY_LIB) $(LIB)
+
+# Compilation rules
+
+%.o:%.cpp
+	$(CC) $(CCFLAGS) $(SHFLAGS) $(EXTRA_INC) $(THIRDPARTY_INC) -c $<
+
+%.d:%.cpp
+	$(CC) $(CCFLAGS) $(SHFLAGS) $(EXTRA_INC) $(THIRDPARTY_INC) $(DEPFLAGS) $< > $@
+
+# Individual dependencies
+
+DEPENDS = $(OBJ:.o=.d)
+sinclude $(DEPENDS)

@@ -1,0 +1,27 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/CleanFunctions
+
+cleanCase
+rm -r 0
+cp -r  0.init 0
+
+rm time_*
+rm -r binning
+rm -r c3po_dataStorage*
+rm -r c3po_timin*
+rm -r c3po_sampl*
+rm -r c3po_binn*
+rm -r sampling
+rm -r runResult*
+
+rm constant/polyMesh/boundary
+
+cd octave 
+rm  *.eps
+rm octave.m
+
+# ----------------------------------------------------------------- end-of-file
+

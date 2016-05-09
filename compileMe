@@ -1,0 +1,148 @@
+#!/bin/bash
+cd $C3PO_SRC_DIR
+currDir=$PWD
+
+# 1 - the core
+clear
+echo '****************************************************'
+echo 'Compiling C3PO core now....'
+echo '****************************************************'
+echo ''
+cd $currDir
+cd core
+rm *.a
+if [[ "$C3PO_HDF5_DIR" = "" ]] || [[ $USEHDF5 != true ]]; then  
+   echo '***WARNING***'
+   echo 'Could not find a valid definition for "C3PO_HDF5_DIR" or "USEHDF5" was not set to true in the .bashrc file. Will NOT install HDF5 capability.'
+   echo '***WARNING***'
+   echo ''
+   sleep 1
+   make fedora_fpic_noH5 -j 4
+   make -f Makefile.lib fedora_fpic_noH5
+else 
+   echo 'Will install HDF5 capability into C3PO core now ...'
+   echo ''
+   sleep 1
+   make fedora_fpic -j 4
+   ./Make.sh Makefile.lib
+   make -f Makefile.lib fedora_fpic
+fi
+
+
+
+# 2 - the interface modules
+clear
+echo '****************************************************'
+echo 'Compiling C3PO interface modules now....'
+echo '****************************************************'
+echo ''
+
+if [[ "$FOAM_SRC" = "" ]] || [[ "$1" == "no-OF" ]]; then  
+  echo '***WARNING***'
+  echo 'Could not find a valid definition for "FOAM_SRC" or "no-OF" was set. Will NOT install OpenFOAM interface.'
+  echo '***WARNING***'
+  echo ''
+else
+  echo 'Will install OpenFOAM interface now ...'
+  echo ''
+  cd $currDir  
+  cd interface_OF
+  wmake libso
+fi
+
+cd $currDir
+cd interface_CSV
+
+if [[ "$C3PO_HDF5_DIR" = "" ]] || [[ $USEHDF5 != true ]]; then  
+  echo '***WARNING***'
+  echo 'Could not find a valid definition for "C3PO_HDF5_DIR" or "USEHDF5" was not set to true in the .bashrc file. Will NOT install HDF5 capability.'
+  echo '***WARNING***'
+  echo ''
+  make fedora_fpic_noH5 -j 4
+else  
+  echo 'Will install HDF5 capability into CSV interface now ...'
+  echo ''
+  make fedora_fpic -j 4
+fi
+
+# 3 - the (test) applications
+clear
+echo '****************************************************'
+echo 'Compiling C3PO applications now....'
+echo '****************************************************'
+echo ''
+
+if [[ "$FOAM_SRC" = "" ]] || [[ "$1" == "no-OF" ]]; then  
+  echo '***WARNING***'
+  echo 'Could not find a valid definition for "FOAM_SRC" or "no-OF" was set. Will NOT install OpenFOAM applications.'
+  echo '***WARNING***'
+  echo ''
+else
+  cd $currDir
+  cd applications/meshFilter/ 
+  if [[ "$C3PO_HDF5_DIR" = "" ]] || [[ $USEHDF5 != true ]]; then   
+    echo '***WARNING***'
+    echo 'Could not find a valid definition for "C3PO_HDF5_DIR" or "USEHDF5" was not set to true in the .bashrc file. Will NOT install HDF5 capability.'
+    echo '***WARNING***'
+    echo ''
+  else  
+    echo 'Will install HDF5 capability into C3PO applications now ...'
+    echo ''
+  fi
+ 
+  wmake
+  
+  cd $currDir
+  cd applications/stokesFilter/ 
+  if [[ "$C3PO_HDF5_DIR" = "" ]] || [[ $USEHDF5 != true ]]; then   
+    echo '***WARNING***'
+    echo 'Could not find a valid definition for "C3PO_HDF5_DIR" or "USEHDF5" was not set to true in the .bashrc file. Will NOT install HDF5 capability.'
+    echo '***WARNING***'
+    echo ''
+  else  
+    echo 'Will install HDF5 capability into C3PO applications now ...'
+    echo ''
+  fi
+ 
+  wmake
+  
+  cd $currDir
+  cd applications/irrotationalFilter/ 
+  if [[ "$C3PO_HDF5_DIR" = "" ]] || [[ $USEHDF5 != true ]]; then   
+    echo '***WARNING***'
+    echo 'Could not find a valid definition for "C3PO_HDF5_DIR" or "USEHDF5" was not set to true in the .bashrc file. Will NOT install HDF5 capability.'
+    echo '***WARNING***'
+    echo ''
+  else  
+    echo 'Will install HDF5 capability into C3PO applications now ...'
+    echo ''
+  fi
+ 
+  wmake
+  
+ 
+   if [[ "$CFDEM_SRC_DIR" = "" ]] || [[ "$1" != "yes-CFDEM" ]]; then
+    echo '***WARNING***'
+    echo 'Could not find a valid definition for "CFDEM_SRC_DIR" or "yes-CFDEM" was NOT set. Will NOT install CFDEM applications.'
+    echo '***WARNING***'
+    echo ''
+  else
+    cd $currDir
+    cd applications/pisoFoam_c3po/
+
+    if [[ "$C3PO_HDF5_DIR" = "" ]] || [[ $USEHDF5 != true ]]; then   
+      echo '***WARNING***'
+      echo 'Could not find a valid definition for "C3PO_HDF5_DIR" or "USEHDF5" was not set to true in the .bashrc file. Will NOT install HDF5 capability.'
+
+      echo '***WARNING***'
+      echo ''
+    else  
+      echo 'Will install HDF5 capability into C3PO core now ...'
+      echo ''
+    fi
+    wmake
+    cd $currDir
+  fi
+  
+
+fi

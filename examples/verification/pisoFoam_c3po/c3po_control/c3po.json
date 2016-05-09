@@ -1,0 +1,111 @@
+{
+   "mainSettings":
+   {
+        "doFiltering": true,
+        "doSampling":  false,
+        "doBinning":   false,
+        "dumpFormat": "hdf5",
+        "verbose": false,
+        "FieldsToRegister":
+        {
+        "Vectorfields": " U  ",
+        "Scalarfields": "  "
+        },
+         "filterBCs":
+        {
+        "x":"periodic",
+        "y":"periodic",
+        "z":"periodic"
+        },
+        "useProbes" : true,
+        "storageWriteFields"    :  false,
+        "storageWriteParticles" :  true,
+         "interfaceWriteFields" : false
+     
+   },
+  
+   "0.75":	  { 
+                     "CoordSys": 1, 
+                     "r": 0.37
+                  },
+  "1.00":        {
+                     "CoordSys": 1,
+                     "r": 0.5
+                  },
+   "1.25":        {
+                     "CoordSys": 1,
+                     "r": 0.62
+                  },
+   "1.50":        {
+                     "CoordSys": 1,
+                     "r": 0.75
+                  },
+
+    
+   "1.75":        {
+                     "CoordSys": 1,
+                     "r": 0.87
+                  },
+
+   "2.00":        {
+                     "CoordSys": 1,
+                     "r": 1.0
+                  },
+       
+   "2.25":        {
+                     "CoordSys": 1,
+                     "r": 1.12
+                  },
+
+   "2.50":        {
+                     "CoordSys": 1,
+                     "r": 1.25
+                  },
+
+   "2.75":        {
+                     "CoordSys": 1,
+                     "r": 1.37
+                  },
+   "3.00":        {
+                     "CoordSys": 1,
+                     "r": 1.5
+                  },
+ 
+ 
+
+
+   "Filter": 
+            {
+             "mainSettings":
+             {
+              "VectorfieldsToFilter": "U ",
+              "ScalarfieldsToFilter": " ",
+              "lagrangian": true,
+              "probesName":"particleCenter"
+             
+             },
+             
+             "varianceSettings":
+             {
+              "VectorfieldsForVarianceName1": "U",
+              "VectorfieldsForVarianceComputeOffDiagonal": [false],
+              "ScalarfieldsForVectorScalarMixedVariance"  : " off",
+              "ScalarfieldsForVarianceName1" : "",
+              "ScalarfieldsForVarianceName2" : "",
+              "computeVariance":true
+             
+             },       
+             
+             "kernelSettings":
+               {
+                "weightFields":"",
+                "inverseWeightFields":""
+               }
+            }
+   
+  
+   
+  
+  
+}    
+

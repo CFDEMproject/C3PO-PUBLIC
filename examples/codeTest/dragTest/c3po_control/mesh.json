@@ -1,0 +1,11 @@
+{
+    "mainSettings": 
+     {
+        "checkTolerance":   1e-7,
+        "verbose":          false,
+        "MaxDomain": [ 1.25, 0.75, 0.75],
+        "MinDomain": [ -0.75, -0.75, -0.75],
+        "Cell Size": [ 0.5, 0.5, 0.5],
+        "domain decomposition":0
+     }
+}

@@ -1,0 +1,3 @@
+OBJECTS = \
+$(OBJECTS_DIR)/mesh_check.o\
+$(OBJECTS_DIR)/c3po_OF_interface.o

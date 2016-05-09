@@ -1,0 +1,17 @@
+{
+
+ "probeSettings":
+ {
+ 
+  "probeNames": " particleCenter",
+  
+  "particleCenter":
+  {
+  
+   "filters":"all",
+   "readFromJson": false
+  } 
+ 
+ }
+
+}

@@ -1,0 +1,123 @@
+{
+   "mainSettings":
+   {
+        "doFiltering": true,
+        "doSampling":  true,
+        "doBinning":   true,
+        "dumpFormat": "json",   
+        "FieldsToRegister":
+        {
+            "Vectorfields": "velocity_x velocityB_x",
+            "Scalarfields": "voidfraction aScalar bScalar" 
+        },
+         "filterBCs":
+        {
+        "x":"periodic",
+        "y":"periodic",
+        "z":"periodic"
+        },
+        "verbose": false,
+        "useProbes": false,
+        "storageWriteFields"    :  true,
+        "storageWriteParticles" :  false,
+        "interfaceWriteFields" :  false
+   },
+  
+   "myFilter0":	  { 
+                     "CoordSys" :  0, 
+                     "x"        :  2.00, 
+                     "y"        :  1.50, 
+                     "z"        :  1.50 
+                  },
+   "myFilter1":	  { 
+                     "CoordSys" :  0, 
+                     "x"        :  0.5, 
+                     "y"        :  0.5,
+                     "z"        :  0.5
+                  },
+   "myFilter2":	  { 
+                     "CoordSys" :  0, 
+                     "x"        :  1.0, 
+                     "y"        :  1.0,
+                     "z"        :  1.0
+                  },
+   "filtFavre": 
+            {
+             "mainSettings":
+             {
+              "VectorfieldsToFilter" : " velocity_x ",
+              "ScalarfieldsToFilter" : " ",
+              "lagrangian"           : false             
+             },
+              
+             "kernelSettings":
+             {
+              "weightFields"   : "voidfraction"
+             }
+            },
+
+    "filtFavreRunningAv":
+            {
+             "mainSettings":
+             {
+               "VectorfieldsToFilter" :                      "velocityB_x velocity_x",
+               "ScalarfieldsToFilter" : "bScalar",
+               "lagrangian"           : false  
+             },
+             
+             "varianceSettings":
+             {
+              "VectorfieldsForVarianceName1" :              "velocity_x velocity_x",
+              "ScalarfieldsForVectorScalarMixedVariance"  : "bScalar off",
+              "VectorfieldsForVarianceComputeOffDiagonal" : [false, false],
+              "ScalarfieldsForVarianceName1" : "",
+              "ScalarfieldsForVarianceName2" : ""
+             },
+             
+             "kernelSettings":
+              {
+                "weightFields":"",
+                "inverseWeightFields":" voidfraction "
+              }
+            
+            },
+            
+ 
+                  
+   "sample0": {
+                 "marker"          : "voidfraction",
+                  "VFieldsToSample" : "velocity_x_filtFavreRunningAv",
+                  "component"   : 0,
+                  "sampleCount"     : -1,
+                  "save2Disk"       : true,
+                  "save2Bin"        : true,
+                  "lagrangian"      : false,
+                  "overwrite"       : true                  
+               },
+   
+   "bin0": {
+                  "bincount"        : 20,
+                  "binUpBorder"     : 0.70,
+                  "binLowBorder"    : 0,
+                  "overwrite"       : true
+           },
+             
+   "sample1": {
+                  "type"            : "general",
+                  "marker"         : "voidfraction",
+                  "VFieldsToSample"   : "velocity_x",
+                  "component"   : 1,
+                  "sampleCount"     : -1,
+                  "save2Disk"       : true,
+                  "save2Bin"        : true,
+                  "lagrangian"      : false,
+                  "overwrite"       : true                  
+               },
+   
+   "bin1": {
+                  "bincount"        : 20,
+                  "binUpBorder"     : 0.50,
+                  "binLowBorder"    : 0,
+                  "overwrite"       : true
+           }
+}    

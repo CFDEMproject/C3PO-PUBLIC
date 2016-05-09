@@ -1,0 +1,25 @@
+EXE_INC = \
+    -I$(LIB_SRC)/triSurface/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(C3PO_SRC_DIR)/core \
+    -I$(LIB_SRC)/mesh/blockMesh/lnInclude \
+    -I$(MPI_ARCH_PATH)/include \
+    -I$(C3PO_QT5_INC)/ \
+
+    
+
+LIB_LIBS = \
+    -L$(C3PO_QT5_INC) \
+    -ltriSurface \
+    -lmeshTools \
+    -L$(C3PO_QT5_LIB) \
+    -lQt5Core \
+    -L$(C3PO_SRC_DIR)/core \
+	-lblockMesh \
+    -lc3po \
+    -L$(MPI_ARCH_PATH)/lib64 \
+    -lmpi_cxx \
+    
+	
+

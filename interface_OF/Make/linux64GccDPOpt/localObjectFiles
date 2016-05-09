@@ -1,0 +1,3 @@
+LOCAL_OBJECTS = \
+mesh_check.o\
+c3po_OF_interface.o

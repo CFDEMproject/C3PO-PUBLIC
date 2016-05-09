@@ -1,0 +1,34 @@
+# C3PO library multiple-machine Makefile
+
+SHELL = /bin/sh
+
+# Definitions
+ROOT =	c3po
+EXE =	lib$(ROOT).a
+
+SRC =	c3po.cpp comm.cpp control.cpp convergent_algorithm.cpp data_storage.cpp divergent_algorithm.cpp error.cpp filter_base.cpp filtered_fields.cpp formula.cpp h5_c3po.cpp input.cpp library.cpp  mesh.cpp multiphase_FlowBasic.cpp operation_base.cpp operation_binning.cpp operation_container.cpp operation_filtering.cpp operation_filtering_kernel.cpp operation_filtering_topHat.cpp operation_sampling.cpp operation_sampling_I_angleVecVec.cpp operation_sampling_I_general.cpp operation_sampling_I_particles.cpp operation_sampling_I_twoPointCorr.cpp output.cpp particle.cpp probeStorage.cpp region.cpp running_stat.cpp selector_base.cpp selector_cellIJK.cpp selector_cellRegion.cpp selector_cellUnstruct.cpp selector_container.cpp selector_particleANN.cpp timer.cpp 
+
+INC =	c3po_base_accessible.h c3po_base.h c3po_base_interface.h c3po_base_interface_vector.h c3po.h comm.h control.h data_storage.h error.h filter_base.h filtered_fields.h formula.h h5_c3po.h input_base.h input.h input_I.h input_properties.h library.h memory_ns.h mesh.h multiphase_FlowBasic.h operation_base.h operation_binning.h operation_container.h operation_filtering.h operation_filtering_kernel.h operation_filtering_topHat.h operation_sampling.h operation_sampling_I_angleVecVec.h operation_sampling_I_general.h operation_sampling_I_particles.h operation_sampling_I_twoPointCorr.h output.h particle.h probeStorage.h psctype.h qjson_includes.h region.h running_stat.h selector_base.h selector_cellIJK.h selector_cellRegion.h selector_cellUnstruct.h selector_container.h selector_particleANN.h style_operation.h style_selector.h timer.h version.h 
+
+
+OBJ =	$(SRC:.cpp=.o)
+
+# Targets
+
+help:
+	@echo 'Type "make target" where target is one of:'
+	@echo ''
+	@files="`ls MAKE/Makefile.*`"; \
+	for file in $$files; do head -1 $$file; done
+
+clean:
+	rm -rf Obj_*
+
+.DEFAULT:
+	@test -f MAKE/Makefile.$@
+	@if [ ! -d Obj_$@ ]; then mkdir Obj_$@; fi
+	@cp -p $(SRC) $(INC) Obj_$@
+	@cp MAKE/Makefile.$@ Obj_$@/Makefile
+	@cd Obj_$@; \
+	$(MAKE) $(MFLAGS) "OBJ = $(OBJ)" "INC = $(INC)" "EXE = ../$(EXE)" lib
+	@if [ -d Obj_$@ ]; then cd Obj_$@; rm -f $(SRC) $(INC) Makefile*; fi

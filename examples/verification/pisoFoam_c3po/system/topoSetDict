@@ -1,0 +1,109 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+    // x000
+    {
+        name    x000_set;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (-0.1  0 0 )(0.1 999 999);
+        }
+    }
+    {
+        name   x000_zone;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set x000_set;           // name of cellSet
+        }
+    }
+
+    // x200
+    {
+        name    x200_set;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.9  0 0 )(2.1 999 999);
+        }
+    }
+    {
+        name   x200_zone;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set x200_set;           // name of cellSet
+        }
+    }
+
+    // x400
+    {
+        name    x400_set;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (3.9  0 0 )(4.15 999 999);
+        }
+    }
+    {
+        name   x400_zone;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set x400_set;           // name of cellSet
+        }
+    }
+
+    // x600
+    {
+        name    x600_set;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (1.9  0 0 )(2.1 999 999);
+        }
+    }
+    {
+        name   x600_zone;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set x600_set;           // name of cellSet
+        }
+    }
+
+
+);

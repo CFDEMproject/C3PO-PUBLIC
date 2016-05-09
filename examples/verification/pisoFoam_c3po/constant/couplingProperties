@@ -1,0 +1,160 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.4                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "";
+    case            "";
+    instance        "";
+    local           "";
+
+    class           dictionary;
+    object          couplingProperties;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+//===========================================================================//
+// sub-models & settings
+
+modelType none;
+
+skipLagrangeToEulerMapping; //switch to deactivate mapping for stagnant particles in cfdemCloudIB
+
+couplingInterval 1;
+
+depth 0;
+
+voidFractionModel IB;//bigParticle;//centre; //
+
+locateModel engineIB;//standard;//
+
+meshMotionModel noMeshMotion;
+
+regionModel allRegion;
+
+dataExchangeModel twoWayMPI;//twoWayFiles;
+
+IOModel basicIO;
+
+probeModel particleProbe;
+
+averagingModel dilute;
+
+clockModel off;
+
+smoothingModel off;
+
+forceModels
+(
+    ShirgaonkarIB
+    ArchimedesIB
+);
+
+momCoupleModels
+(
+);
+
+turbulenceModelType RASProperties;//LESProperties; //
+
+//===========================================================================//
+// sub-model properties
+particleProbeProps
+{
+    particleIDsToSample (1 2 4);
+    verboseToFile;  //main switch
+//    verbose;  //currently not used
+   printEvery  1;      //print every this many CFD time steps
+   sampleAll;          //Activate sampling for all particles
+
+    probeDebug;  //probes additional fields
+//    includePosition;  //will include particle position in the output file
+    writePrecision 4;           //number of significant digits to print
+}
+
+LaEuScalarTempProps
+{
+    velFieldName "U";
+    tempFieldName "Y";
+    voidfractionFieldName "voidfraction";
+    tempSourceFieldName "Ysource";
+    partTempName "Temp";
+    partHeatFluxName "convectiveHeatFlux";
+    lambda 0.0256;
+    Cp 1007;
+    densityFieldName "rho";
+}
+
+ShirgaonkarIBProps
+{
+    velFieldName "U";
+    densityFieldName "rho";
+    pressureFieldName "p";
+//    verbose;
+}
+
+ArchimedesIBProps
+{
+    densityFieldName "rho";
+    gravityFieldName "g";
+    voidfractionFieldName "voidfractionNext";
+}
+
+twoWayFilesProps
+{
+    maxNumberOfParticles 10000;
+    DEMts 0.00003;
+}
+
+twoWayMPIProps
+{
+    maxNumberOfParticles 10100;
+    liggghtsPath "../DEM/in.liggghts_init";
+}
+
+IBProps
+{
+    maxCellsPerParticle 8000;
+    alphaMin 0.30;
+    scaleUpVol 1.0;
+    checkPeriodicCells;
+}
+
+bigParticleProps
+{
+    maxCellsPerParticle 1000;
+    alphaMin 0.30;
+    scaleUpVol 1.0;
+}
+centreProps
+{
+    alphaMin 0.30;
+}
+
+dividedProps
+{
+    alphaMin 0.05;
+    scaleUpVol 1.2;
+}
+
+engineIBProps
+{
+    engineProps
+    {
+        treeSearch false;
+    }
+    zSplit 8;
+    xySplit 16;
+    checkPeriodicCells;
+}
+
+// ************************************************************************* //

@@ -1,0 +1,18 @@
+operation filteringTopHat     filtFavre          #a filtering operation
+operation filteringTopHat     filtFavreGas       #a filtering operation
+operation filteringTopHat     filtAlg            #a filtering operation
+
+selector  filter        myFilter0          #specification of filters (to be done in JSON file)
+selector  filter        myFilter1          #specification of filters (to be done in JSON file)
+selector  filter        myFilter2          #specification of filters (to be done in JSON file)
+selector  cellIJK       myCell0            #selector for cell index calculation
+selector  cellIJK       myCell1            #selector for cell index calculation
+selector  cellIJK       myCell2            #selector for cell index calculation
+
+operation samplingGeneral filtSlipY          #a sampling operation
+operation binning         binFiltSlipY            #a binning operation
+
+operation samplingGeneral filtBetaY           #a sampling operation
+operation binning         binFiltBetaY            #a binning operation
+
+

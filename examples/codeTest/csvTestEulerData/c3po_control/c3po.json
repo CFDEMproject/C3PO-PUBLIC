@@ -1,0 +1,136 @@
+{
+   "mainSettings":
+   {
+        "doFiltering": true,
+        "doSampling":  true,
+        "doBinning":   true,
+        "dumpFormat": "json",   
+        "FieldsToRegister":
+        {
+            "Vectorfields": "solids-x-velocity air-x-velocity udm-x",
+            "Scalarfields": "solids-vof" 
+        },
+         "filterBCs":
+        {
+        "x":"periodic",
+        "y":"periodic",
+        "z":"periodic"
+        },
+        "verbose": false,
+        "storageWriteFields"    :  false,
+        "storageWriteParticles" :  false,
+        "interfaceWriteFields" :   true
+   },
+  
+   "myFilter0":	  { 
+                     "CoordSys" :  0, 
+                     "x"        :  0.00999, 
+                     "y"        :  0.00999,
+                     "z"        :  0.00999
+                  },
+   "myFilter1":	  { 
+                     "CoordSys" :  0, 
+                     "x"        :  0.100, 
+                     "y"        :  0.100,
+                     "z"        :  0.100
+                  },
+   "myFilter2":	  { 
+                     "CoordSys" :  0, 
+                     "x"        :  0.800, 
+                     "y"        :  0.800,
+                     "z"        :  0.800
+                  },
+   "filtFavre": 
+            {
+             "mainSettings":
+             {
+              "VectorfieldsToFilter" : "solids-x-velocity",
+              "ScalarfieldsToFilter" : " ",
+              "lagrangian"           : false
+             
+             },
+             
+             "kernelSettings":
+             {
+              "weights": "solids-vof"
+             }
+             
+             
+            },
+   
+  "filtFavreGas": 
+            {
+             
+             "mainSettings":
+             {
+              "VectorfieldsToFilter" : "air-x-velocity",
+              "ScalarfieldsToFilter" : " ",
+              "lagrangian"           : false
+             
+             },
+             
+             
+             "kernelSettings":
+             {
+              "invertedWeights": "solids-vof"
+             }
+             
+            },   
+
+   "filtAlg": 
+            {
+             
+             "mainSettings":
+             {
+              "VectorfieldsToFilter" : "udm-x",
+              "ScalarfieldsToFilter" : "solids-vof ",
+              "lagrangian"           : false
+             
+             },
+             
+             "kernelSettings":{}
+           
+            },
+             
+   "filtSlipY": {
+                  "marker"          : "solids-vof_filtAlg",
+                  "VFieldsToSample" : "air-x-velocity_filtFavreGas  solids-x-velocity_filtFavre",
+                  "component"       : 1,
+                  "Formula"         : " vec1 - vec2 ",
+                  "saveOnlyFormula" : true,
+                  "sampleCount"     : -1,
+                  "save2Disk"       : true,
+                  "save2Bin"        : true,
+                  "lagrangian"      : false,
+                  "overwrite"       : false                        
+               },
+   
+   "binFiltSlipY": {
+                  "bincount"        : 30,
+                  "binUpBorder"     : 0.65,
+                  "binLowBorder"    : 0,
+                  "overwrite"       : true
+           },
+
+             
+   "filtBetaY": {
+                  "marker"          : "solids-vof_filtAlg",
+                  "VFieldsToSample" : "udm-x_filtAlg  air-x-velocity_filtFavreGas  solids-x-velocity_filtFavre",
+                  "component"       : 1,
+                  "Formula"         : "( vec1 ) % (vec2 - vec3)",
+                  "saveOnlyFormula" : true,
+                  "sampleCount"     : -1,
+                  "save2Disk"       : true,
+                  "save2Bin"        : true,
+                  "lagrangian"      : false,
+                  "overwrite"       : false
+               },
+   
+   "binFiltBetaY": {
+                  "bincount"        : 30,
+                  "binUpBorder"     : 0.65,
+                  "binLowBorder"    : 0,
+                  "overwrite"       : true
+           }
+
+}    

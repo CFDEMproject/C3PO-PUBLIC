@@ -1,0 +1,18 @@
+operation filteringTopHat     filtFavreRunningAv  #a filtering operation
+#operation filtering     filtFavre           #a filtering operation
+#operation filtering     filtAlg            #a filtering operation
+
+selector  filter        myFilter0          #specification of filters (to be done in JSON file)
+#selector  filter        myFilter1          #specification of filters (to be done in JSON file)
+#selector  filter        myFilter2          #specification of filters (to be done in JSON file)
+selector  cellIJK       myCell0            #selector for cell index calculation
+selector  cellIJK       myCell1            #selector for cell index calculation
+selector  cellIJK       myCell2            #selector for cell index calculation
+
+operation samplingGeneral sample0          #a sampling operation, uses unfiltered marker
+operation binning  bin0            #a binning operation, uses unfiltered marker
+
+#operation sampling sample1          #a sampling operation
+#operation binning  bin1            #a binning operation
+
+control   run 2                     #run in stand-alone mode

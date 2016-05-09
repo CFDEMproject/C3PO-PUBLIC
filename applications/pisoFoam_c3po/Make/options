@@ -1,0 +1,42 @@
+include $(C3PO_ADD_LIBS_DIR)/$(C3PO_ADD_LIBS_NAME)
+
+PFLAGS+= -DCFDEMWMPROJECTVERSION="$(CFDEM_WM_PROJECT_VERSION)"
+
+EXE_INC = \
+     $(PFLAGS) \
+    -I$(CFDEM_SRC_DIR)/lagrangian/cfdemParticle/cfdTools \
+    -I$(LIB_SRC)/turbulenceModels/incompressible/turbulenceModel \
+    -I$(LIB_SRC)/transportModels \
+    -I$(LIB_SRC)/transportModels/incompressible/singlePhaseTransportModel \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(CFDEM_SRC_DIR)/lagrangian/cfdemParticle/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+    -I$(LIB_SRC)/sampling/lnInclude \
+    -I$(LIB_SRC)/dynamicFvMesh/lnInclude \
+    -I$(LIB_SRC)/dynamicMesh/lnInclude \
+    -I$(LIB_SRC)/dynamicMesh/dynamicFvMesh/lnInclude \
+    -I$(LIB_SRC)/dynamicMesh/dynamicMesh/lnInclude \
+    -I$(LIB_SRC)/fvOptions/lnInclude \
+    -I$(C3PO_SRC_DIR)/core \
+    -I$(C3PO_SRC_DIR)/interface_OF \
+    -I$(MPI_ARCH_PATH)/include \
+    $(CFDEM_ADD_INCOMPTURBMOD_PATHS) \
+    $(CFDEM_ADD_COMPTURBMOD_PATHS) \
+    -I$(CFDEM_OFVERSION_DIR) \
+
+EXE_LIBS = \
+    $(CFDEM_ADD_INCOMPTURBMOD_LIB) \
+    $(CFDEM_ADD_COMPTURBMOD_LIB) \
+    -lincompressibleTransportModels \
+    -lfiniteVolume \
+    -ldynamicFvMesh \
+    -ldynamicMesh \
+    -lfvOptions \
+    -L$(MPI_ARCH_PATH)/lib64 \
+    -lmpi_cxx \
+    -lmpi \
+    -L$(CFDEM_LIB_DIR)\
+    -l$(CFDEM_LIB_NAME) \
+     $(CFDEM_ADD_LIB_PATHS) \
+     $(CFDEM_ADD_LIBS) \
+     $(CFDEM_ADD_STATICLIBS)

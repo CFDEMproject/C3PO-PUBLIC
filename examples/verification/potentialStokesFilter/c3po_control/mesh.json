@@ -1,0 +1,11 @@
+{
+    "mainSettings": 
+     {
+        "checkTolerance":   1e-7,
+        "verbose":          false,
+        "filterWidthTolerance": 1e-04
+     }
+
+
+
+}

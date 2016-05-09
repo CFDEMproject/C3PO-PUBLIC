@@ -1,0 +1,1529 @@
+==27200== Memcheck, a memory error detector
+==27200== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==27200== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==27200== Command: ../../../interface_CSV/c3po_csv
+==27200== 
+--27200-- Valgrind options:
+--27200--    --leak-check=full
+--27200--    -v
+--27200-- Contents of /proc/version:
+--27200--   Linux version 3.11.10-17-desktop (geeko@buildhost) (gcc version 4.8.1 20130909 [gcc-4_8-branch revision 202388] (SUSE Linux) ) #1 SMP PREEMPT Mon Jun 16 15:28:13 UTC 2014 (fba7c1f)
+--27200-- Arch and hwcaps: AMD64, amd64-sse3-cx16-avx
+--27200-- Page sizes: currently 4096, max supported 4096
+--27200-- Valgrind library directory: /usr/lib64/valgrind
+--27200-- Reading syms from /home/federico/CFDEM/C3PO/interface_CSV/c3po_csv
+--27200-- Reading syms from /lib64/ld-2.18.so
+--27200-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--27200--    object doesn't have a symbol table
+--27200--    object doesn't have a dynamic symbol table
+--27200-- Scheduler: using generic scheduler lock implementation.
+--27200-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==27200== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-27200-by-federico-on-subterrel
+==27200== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-27200-by-federico-on-subterrel
+==27200== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-27200-by-federico-on-subterrel
+==27200== 
+==27200== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==27200== don't want to do, unless you know exactly what you're doing,
+==27200== or are doing some strange experiment):
+==27200==   /usr/lib64/valgrind/../../bin/vgdb --pid=27200 ...command...
+==27200== 
+==27200== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==27200==   /path/to/gdb ../../../interface_CSV/c3po_csv
+==27200== and then give GDB the following command
+==27200==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=27200
+==27200== --pid is optional if only one valgrind process is running
+==27200== 
+--27200-- REDIR: 0x40175f0 (strlen) redirected to 0x3806e381 (???)
+--27200-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--27200--    object doesn't have a symbol table
+--27200-- REDIR: 0x4017540 (index) redirected to 0x4c2a950 (index)
+--27200-- REDIR: 0x40175c0 (strcmp) redirected to 0x4c2ba30 (strcmp)
+--27200-- Reading syms from /home/federico/Qt5.3.0/5.3/gcc_64/lib/libQt5Core.so.5.3.0
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /home/federico/hdf5-1.8.13/lib64/libhdf5_cpp.so.8.0.2
+--27200-- Reading syms from /home/federico/hdf5-1.8.13/lib64/libhdf5.so.8.0.2
+--27200-- Reading syms from /usr/lib64/libstdc++.so.6.0.18
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/libmpi_cxx.so.1.1.2
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /lib64/libm-2.18.so
+--27200-- Reading syms from /lib64/libgcc_s.so.1
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /lib64/libpthread-2.18.so
+--27200-- Reading syms from /lib64/libc-2.18.so
+--27200-- REDIR: 0x4018440 (stpcpy) redirected to 0x4c2cef0 (stpcpy)
+--27200-- Reading syms from /home/federico/Qt5.3.0/5.3/gcc_64/lib/libicui18n.so.52.1
+--27200-- Reading syms from /home/federico/Qt5.3.0/5.3/gcc_64/lib/libicuuc.so.52.1
+--27200-- Reading syms from /lib64/libdl-2.18.so
+--27200-- Reading syms from /usr/lib64/libgthread-2.0.so.0.3800.2
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /lib64/librt-2.18.so
+--27200-- Reading syms from /usr/lib64/libglib-2.0.so.0.3800.2
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /lib64/libz.so.1.2.8
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/libpcre.so.1.2.1
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /lib64/libutil-2.18.so
+--27200-- REDIR: 0x6c534c0 (strcasecmp) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c557b0 (strncasecmp) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c52c90 (memcpy@GLIBC_2.2.5) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c57e90 (memcpy@@GLIBC_2.14) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c502e0 (strncmp) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c526b0 (bcmp) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c51c10 (__GI_strrchr) redirected to 0x4c2a770 (__GI_strrchr)
+--27200-- REDIR: 0x6c4fec0 (strlen) redirected to 0x4c2ace0 (strlen)
+--27200-- REDIR: 0x6c50330 (__GI_strncmp) redirected to 0x4c2b1f0 (__GI_strncmp)
+--27200-- REDIR: 0x6c4e430 (strcmp) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6cf5ea0 (__strcmp_ssse3) redirected to 0x4c2b990 (strcmp)
+--27200-- REDIR: 0x6c4a8e0 (calloc) redirected to 0x4c298e0 (calloc)
+--27200-- REDIR: 0x6c49f90 (malloc) redirected to 0x4c27740 (malloc)
+--27200-- REDIR: 0x6c52d20 (memset) redirected to 0x4c2cfd0 (memset)
+--27200-- REDIR: 0x6c59420 (strchrnul) redirected to 0x4c2d560 (strchrnul)
+--27200-- REDIR: 0x6c5cf20 (__memcpy_sse2_unaligned) redirected to 0x4c2bd80 (memcpy@@GLIBC_2.14)
+--27200-- REDIR: 0x6c4a460 (realloc) redirected to 0x4c29b00 (realloc)
+--27200-- REDIR: 0x6d15d00 (__memcmp_sse4_1) redirected to 0x4c2cbd0 (bcmp)
+--27200-- REDIR: 0x6c51b80 (strncpy) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c62110 (__strncpy_sse2_unaligned) redirected to 0x4c2aee0 (strncpy)
+--27200-- REDIR: 0x6d05d30 (__memmove_ssse3_back) redirected to 0x4c2bb50 (memcpy@GLIBC_2.2.5)
+--27200-- REDIR: 0x5d05ea0 (operator new(unsigned long)) redirected to 0x4c27ce0 (operator new(unsigned long))
+--27200-- REDIR: 0x6c4a3d0 (free) redirected to 0x4c28a70 (free)
+--27200-- REDIR: 0x6c66b50 (strstr) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6cee110 (__strstr_sse42) redirected to 0x4c2d970 (strstr)
+--27200-- REDIR: 0x6c502a0 (strncat) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c651f0 (__strncat_sse2_unaligned) redirected to 0x4c2ab70 (strncat)
+--27200-- REDIR: 0x6c4e160 (strcat) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c64900 (__strcat_sse2_unaligned) redirected to 0x4c2a990 (strcat)
+--27200-- REDIR: 0x6c59210 (__GI___rawmemchr) redirected to 0x4c2d5c0 (__GI___rawmemchr)
+--27200-- REDIR: 0x6c04a80 (putenv) redirected to 0x4c2dc30 (putenv)
+--27200-- REDIR: 0x6c4e3b0 (__GI_strchr) redirected to 0x4c2a850 (__GI_strchr)
+--27200-- REDIR: 0x6c50080 (strnlen) redirected to 0x4c2ac80 (strnlen)
+--27200-- REDIR: 0x6c4e360 (index) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6cf2e80 (__strcasecmp_avx) redirected to 0x4c2b260 (strcasecmp)
+--27200-- REDIR: 0x6cf44f0 (__strncasecmp_avx) redirected to 0x4c2b340 (strncasecmp)
+--27200-- REDIR: 0x6c51bc0 (rindex) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c4f8e0 (strcpy) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c61ae0 (__strcpy_sse2_unaligned) redirected to 0x4c2ad20 (strcpy)
+--27200-- REDIR: 0x6c52af0 (__GI_memmove) redirected to 0x4c2d2a0 (__GI_memmove)
+--27200-- REDIR: 0x6c53310 (stpcpy) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6c630f0 (__stpcpy_sse2_unaligned) redirected to 0x4c2cc50 (stpcpy)
+--27200-- REDIR: 0x6c591d0 (rawmemchr) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6cf7100 (__strncmp_ssse3) redirected to 0x4c2b180 (strncmp)
+--27200-- REDIR: 0x6c4a700 (memalign) redirected to 0x4c29d60 (memalign)
+--27200-- REDIR: 0x6c52360 (memchr) redirected to 0x4c2bad0 (memchr)
+--27200-- REDIR: 0xffffffffff600000 (???) redirected to 0x3806e363 (???)
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_shmem_mmap.so
+--27200--    object doesn't have a symbol table
+--27200-- REDIR: 0x6c53350 (__GI_stpcpy) redirected to 0x4c2cd30 (__GI_stpcpy)
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_shmem_posix.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_shmem_sysv.so
+--27200--    object doesn't have a symbol table
+--27200-- REDIR: 0x6c52e20 (mempcpy) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6d03260 (__mempcpy_ssse3_back) redirected to 0x4c2d680 (mempcpy)
+--27200-- Discarding syms at 0xb255e90-0xb256b8c in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_shmem_posix.so due to munmap()
+--27200-- Discarding syms at 0xb459c50-0xb45a5a0 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_shmem_sysv.so due to munmap()
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_env.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_hnp.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_singleton.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_slurm.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_tool.so
+--27200--    object doesn't have a symbol table
+--27200-- Discarding syms at 0xb256070-0xb2565c8 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_env.so due to munmap()
+--27200-- Discarding syms at 0xb45ade0-0xb45c278 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_hnp.so due to munmap()
+--27200-- Discarding syms at 0xb863050-0xb8635b8 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_slurm.so due to munmap()
+--27200-- Discarding syms at 0xba65bc0-0xba65e14 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_tool.so due to munmap()
+==27202== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-27202-by-federico-on-subterrel
+==27202== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-27202-by-federico-on-subterrel
+==27202== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-27202-by-federico-on-subterrel
+==27202== 
+==27202== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==27202== don't want to do, unless you know exactly what you're doing,
+==27202== or are doing some strange experiment):
+==27202==   /usr/lib64/valgrind/../../bin/vgdb --pid=27202 ...command...
+==27202== 
+==27202== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==27202==   /path/to/gdb ../../../interface_CSV/c3po_csv
+==27202== and then give GDB the following command
+==27202==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=27202
+==27202== --pid is optional if only one valgrind process is running
+==27202== 
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_state_app.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_state_hnp.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_state_novm.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_state_orted.so
+--27200--    object doesn't have a symbol table
+--27200-- Discarding syms at 0xb4595c0-0xb4599d8 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_state_hnp.so due to munmap()
+--27200-- Discarding syms at 0xb8636b0-0xb863d58 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_state_novm.so due to munmap()
+--27200-- Discarding syms at 0xba67260-0xba682e0 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_state_orted.so due to munmap()
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_errmgr_default_app.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_errmgr_default_hnp.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_errmgr_default_orted.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_rml_oob.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_oob_tcp.so
+--27200--    object doesn't have a symbol table
+--27200-- REDIR: 0x6cc27c0 (__strcpy_chk) redirected to 0x4c2d5e0 (__strcpy_chk)
+--27200-- Discarding syms at 0xb863140-0xb863c2c in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_errmgr_default_hnp.so due to munmap()
+--27200-- Discarding syms at 0xba67240-0xba68920 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_errmgr_default_orted.so due to munmap()
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_routed_binomial.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_routed_debruijn.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_routed_direct.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_routed_radix.so
+--27200--    object doesn't have a symbol table
+--27200-- Discarding syms at 0xc083310-0xc084514 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_routed_debruijn.so due to munmap()
+--27200-- Discarding syms at 0xba67d30-0xba68504 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_routed_direct.so due to munmap()
+--27200-- Discarding syms at 0xc287610-0xc2889b0 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_routed_radix.so due to munmap()
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_db_hash.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_grpcomm_bad.so
+--27200--    object doesn't have a symbol table
+--27200-- REDIR: 0x6c4e480 (__GI_strcmp) redirected to 0x4c2b9e0 (__GI_strcmp)
+--27200-- REDIR: 0x6c52030 (strspn) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6cf2d60 (__strspn_sse42) redirected to 0x4c2dad0 (strspn)
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_allocator_basic.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_allocator_bucket.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_rcache_vma.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_mpool_grdma.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_mpool_sm.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/libmca_common_sm.so.4.0.2
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_pml_bfo.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_pml_cm.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_pml_ob1.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_bml_r2.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_btl_self.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_btl_sm.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_btl_tcp.so
+--27200--    object doesn't have a symbol table
+--27200-- Discarding syms at 0xd0c1050-0xd0c542c in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_pml_cm.so due to munmap()
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_coll_basic.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_coll_hierarch.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_coll_inter.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_coll_libnbc.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_coll_ml.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_coll_self.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_coll_sm.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_coll_tuned.so
+--27200--    object doesn't have a symbol table
+--27200-- Discarding syms at 0xe3a5c10-0xe3bc5fc in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_coll_ml.so due to munmap()
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_osc_pt2pt.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_osc_rdma.so
+--27200--    object doesn't have a symbol table
+--27200-- Discarding syms at 0xcea1940-0xceb7e44 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_pml_bfo.so due to munmap()
+==27200== Syscall param writev(vector[...]) points to uninitialised byte(s)
+==27200==    at 0x6CAD2D7: writev (in /lib64/libc-2.18.so)
+==27200==    by 0xBE79282: mca_oob_tcp_msg_send_handler (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_oob_tcp.so)
+==27200==    by 0xBE7A072: mca_oob_tcp_peer_send (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_oob_tcp.so)
+==27200==    by 0xBE7D2E2: mca_oob_tcp_send_nb (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_oob_tcp.so)
+==27200==    by 0xBC6E78C: orte_rml_oob_send_buffer_nb (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_rml_oob.so)
+==27200==    by 0xBA681E5: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_grpcomm_bad.so)
+==27200==    by 0x8546E6C: orte_grpcomm_base_modex (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x620D6C7: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200==  Address 0xa828917 is 119 bytes inside a block of size 256 alloc'd
+==27200==    at 0x4C29B7E: realloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x8277B89: opal_dss_buffer_extend (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x82788DD: opal_dss_copy_payload (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x854779D: orte_grpcomm_base_pack_collective (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0xBA681C3: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_grpcomm_bad.so)
+==27200==    by 0x8546E6C: orte_grpcomm_base_modex (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x620D6C7: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+--27200-- Discarding syms at 0xe7c9680-0xe7cc0e4 in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_coll_sm.so due to munmap()
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_pubsub_orte.so
+--27200--    object doesn't have a symbol table
+--27200-- Reading syms from /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_dpm_orte.so
+--27200--    object doesn't have a symbol table
+--27200-- REDIR: 0x5d041d0 (operator delete(void*)) redirected to 0x4c28f40 (operator delete(void*))
+--27200-- REDIR: 0x5d05fb0 (operator new[](unsigned long)) redirected to 0x4c28450 (operator new[](unsigned long))
+--27200-- REDIR: 0x6cc2370 (__memcpy_chk) redirected to 0x4a22770 (_vgnU_ifunc_wrapper)
+--27200-- REDIR: 0x6d00780 (__memcpy_chk_ssse3_back) redirected to 0x4c2d860 (__memcpy_chk)
+--27200-- REDIR: 0x5d04200 (operator delete[](void*)) redirected to 0x4c294c0 (operator delete[](void*))
+==27200== Invalid read of size 1
+==27200==    at 0x4A155B: C3PO_NS::Formula::interpretFormula(int, int) const (formula.cpp:188)
+==27200==    by 0x48EC8E: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:152)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200==  Address 0xef11116 is 2 bytes after a block of size 4 alloc'd
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x4A295F: std::vector<char, std::allocator<char> >::_M_insert_aux(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char const&) (new_allocator.h:104)
+==27200==    by 0x4A0728: C3PO_NS::Formula::ParseFormula() const (stl_vector.h:913)
+==27200==    by 0x4A0B8C: C3PO_NS::Formula::Formula(char const*, char const*) (formula.cpp:76)
+==27200==    by 0x48EB92: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:151)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== Conditional jump or move depends on uninitialised value(s)
+==27200==    at 0x4A1B3B: C3PO_NS::Formula::interpretFormula(int, int) const (formula.cpp:248)
+==27200==    by 0x48EC8E: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:152)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== Conditional jump or move depends on uninitialised value(s)
+==27200==    at 0x49ABA0: C3PO_NS::SelectorCellIJK::RunSelector() (selector_cellIJK.cpp:216)
+==27200==    by 0x429703: C3PO_NS::c3po::runFilters(int) const (c3po.cpp:249)
+==27200==    by 0x41F449: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:759)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== Conditional jump or move depends on uninitialised value(s)
+==27200==    at 0x49ABFE: C3PO_NS::SelectorCellIJK::RunSelector() (selector_cellIJK.cpp:216)
+==27200==    by 0x429703: C3PO_NS::c3po::runFilters(int) const (c3po.cpp:249)
+==27200==    by 0x41F449: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:759)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== Conditional jump or move depends on uninitialised value(s)
+==27200==    at 0x49ABCF: C3PO_NS::SelectorCellIJK::RunSelector() (selector_cellIJK.cpp:216)
+==27200==    by 0x429703: C3PO_NS::c3po::runFilters(int) const (c3po.cpp:249)
+==27200==    by 0x41F449: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:759)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+--27200-- memcheck GC: 1000 nodes, 4 survivors (  0.4%)
+
+***************************************
+***              C3PO               ***
+*** (c) DCS GmbH, Linz, Austria     ***
+*** (c) TU Graz, Graz, Austria      ***
+***************************************
+C3PO (Version: master-1.0.1-beta, compiled 2015-11-02-21:56:16 by federico)
+
+c3po is opening the main JSON document...
+
+
+Operation with name filtFavre initialized. 
+...a filtering operation of type filtering_Favre is registered with ID 0
+
+Selector with name myCell0 initialized. 
+
+Operation with name sample0 initialized. 
+...a sampling operation of type sampling_general is registered with ID 0
+formula: (vec3)%(vec1-vec2) 
+interpreted numerator: 2 
+interpreted denominator: 0-1 
+
+ norm:D
+ norm:m
+ norm:1
+ norm:v
+ norm:1
+ *** Settling properties have been set up ***
+  dp:     7.5e-05 [m] 
+
+CPPPO registered your formula : 
+(vec3)%(vec1-vec2)
+
+WARNING: Will save all Euler cells for 'general' sampling. This might be expensive. 
+
+
+WARNING: Will save samples to disk. This might consume significant disk space. 
+
+Will save samples to binning array. Be sure you have initialized a corresponding binning operation. 
+
+
+Operation with name bin0 initialized. 
+...a binning operation is registered with ID 0
+
+ ***   C3PO processed your inputs.   ***
+
+
+
+No information regarding the columns to read in mesh.json was given. The first four columns will be read.
+
+===> CPPPO is processing time 0/0 from file ./data/test.csv  
+
+Running filter myFilter0 with ID: 0 
+
+type: 0, filtersize = 0.5x0.5x0.15 (1x1x0 cells) on grid with cellSize 0.5x0.5x0.5 results in 9 filtered cells. 
+nFilter with name myFilter0 initialized and filter cell count set. 
+
+
+Filtering operations ended successfully for proc: 0
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.805   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 0.8   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+VectorField:sampleValue: 1   marker0: 0.5
+==27200== Invalid read of size 8
+==27200==    at 0x4A00C8: C3PO_NS::Formula::normalize(std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >*, std::vector<std::vector<double, std::allocator<double> >*, std::allocator<std::vector<double, std::allocator<double> >*> >*) const (stl_vector.h:771)
+==27200==    by 0x48939C: C3PO_NS::OperationSampling::middle_of_step() (operation_sampling.cpp:111)
+==27200==    by 0x42A194: C3PO_NS::c3po::runSampling() const (operation_container.h:64)
+==27200==    by 0x41F4B0: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:789)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200==  Address 0xef149f8 is 488 bytes inside a block of size 537 free'd
+==27200==    at 0x4C28FAC: operator delete(void*) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x48DF1F: C3PO_NS::OperationSampling::createSampleVectors(unsigned int, unsigned int, unsigned int) (basic_string.h:249)
+==27200==    by 0x46334A: C3PO_NS::SamplingGeneral::process_input(QJsonObject) (operation_sampling_I_general.cpp:111)
+==27200==    by 0x48F127: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:188)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== Invalid read of size 8
+==27200==    at 0x4A00D7: C3PO_NS::Formula::normalize(std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >*, std::vector<std::vector<double, std::allocator<double> >*, std::allocator<std::vector<double, std::allocator<double> >*> >*) const (formula.cpp:449)
+==27200==    by 0x48939C: C3PO_NS::OperationSampling::middle_of_step() (operation_sampling.cpp:111)
+==27200==    by 0x42A194: C3PO_NS::c3po::runSampling() const (operation_container.h:64)
+==27200==    by 0x41F4B0: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:789)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==27200== 
+[subterrel:27200] *** Process received signal ***
+[subterrel:27200] Signal: Segmentation fault (11)
+[subterrel:27200] Signal code: Address not mapped (1)
+[subterrel:27200] Failing at address: (nil)
+[subterrel:27200] [ 0] /lib64/libpthread.so.0(+0xf9f0) [0x69be9f0]
+[subterrel:27200] [ 1] ../../../interface_CSV/c3po_csv() [0x4a00d7]
+[subterrel:27200] [ 2] ../../../interface_CSV/c3po_csv() [0x48939d]
+[subterrel:27200] [ 3] ../../../interface_CSV/c3po_csv() [0x42a195]
+[subterrel:27200] [ 4] ../../../interface_CSV/c3po_csv() [0x41f4b1]
+[subterrel:27200] [ 5] ../../../interface_CSV/c3po_csv() [0x41f6b3]
+[subterrel:27200] [ 6] ../../../interface_CSV/c3po_csv() [0x40fe17]
+[subterrel:27200] [ 7] /lib64/libc.so.6(__libc_start_main+0xf5) [0x6beebe5]
+[subterrel:27200] [ 8] ../../../interface_CSV/c3po_csv() [0x410589]
+[subterrel:27200] *** End of error message ***
+==27200== 
+==27200== Process terminating with default action of signal 11 (SIGSEGV)
+==27200==  Access not within mapped region at address 0x0
+==27200==    at 0x4A00D7: C3PO_NS::Formula::normalize(std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >*, std::vector<std::vector<double, std::allocator<double> >*, std::allocator<std::vector<double, std::allocator<double> >*> >*) const (formula.cpp:449)
+==27200==    by 0x48939C: C3PO_NS::OperationSampling::middle_of_step() (operation_sampling.cpp:111)
+==27200==    by 0x42A194: C3PO_NS::c3po::runSampling() const (operation_container.h:64)
+==27200==    by 0x41F4B0: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:789)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200==  If you believe this happened as a result of a stack
+==27200==  overflow in your program's main thread (unlikely but
+==27200==  possible), you can try to increase the size of the
+==27200==  main thread stack using the --main-stacksize= flag.
+==27200==  The main thread stack size used in this run was 8388608.
+
+ volFrac : 0.5 slip : 0.805==27200== 
+==27200== HEAP SUMMARY:
+==27200==     in use at exit: 2,442,641 bytes in 7,044 blocks
+==27200==   total heap usage: 14,335 allocs, 7,291 frees, 13,483,281 bytes allocated
+==27200== 
+==27200== Searching for pointers to 7,044 not-freed blocks
+==27200== Checked 1,925,904 bytes
+==27200== 
+==27200== 10 bytes in 1 blocks are definitely lost in loss record 1,113 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x827BBB7: opal_dss_unpack_string (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x827ABD2: opal_dss_unpack_buffer (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x827BA2B: opal_dss_unpack (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x853939A: orte_util_decode_nodemap (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x853AFDF: orte_util_nidmap_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0xB65FA43: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_singleton.so)
+==27200==    by 0x85223EC: orte_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x620D2B8: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+==27200== 10 bytes in 1 blocks are definitely lost in loss record 1,114 of 5,906
+==27200==    at 0x4C284B7: operator new[](unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x446D33: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:97)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 15 bytes in 2 blocks are definitely lost in loss record 1,354 of 5,906
+==27200==    at 0x4C284B7: operator new[](unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x47B242: C3PO_NS::SelectorContainer::parse_command(int, char const* const*) (selector_container.cpp:101)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 16 bytes in 1 blocks are definitely lost in loss record 1,510 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x827BCC2: opal_dss_unpack_byte_object (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x827ABD2: opal_dss_unpack_buffer (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x827BA2B: opal_dss_unpack (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x853AFFF: orte_util_nidmap_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0xB65FA43: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_singleton.so)
+==27200==    by 0x85223EC: orte_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x620D2B8: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+==27200== 16 bytes in 1 blocks are definitely lost in loss record 1,511 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x827BCC2: opal_dss_unpack_byte_object (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x827ABD2: opal_dss_unpack_buffer (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x827BA2B: opal_dss_unpack (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x853AFC5: orte_util_nidmap_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0xB65FA43: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_singleton.so)
+==27200==    by 0x85223EC: orte_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x620D2B8: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+==27200== 17 (16 direct, 1 indirect) bytes in 1 blocks are definitely lost in loss record 1,544 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0xC084229: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_db_hash.so)
+==27200==    by 0x6210017: ompi_modex_recv_string (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x61FFABB: ompi_comm_cid_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x620DDB6: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+==27200== 18 bytes in 2 blocks are definitely lost in loss record 1,577 of 5,906
+==27200==    at 0x4C284B7: operator new[](unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x47B266: C3PO_NS::SelectorContainer::parse_command(int, char const* const*) (selector_container.cpp:105)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 26 bytes in 1 blocks are possibly lost in loss record 2,372 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4106E3: C3PO_NS::c3poCSVinterface::readInput() const (c3po_CSV_interface.cpp:183)
+==27200==    by 0x41F69A: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:822)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 29 bytes in 1 blocks are possibly lost in loss record 2,455 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x42BC4A: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:63)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 29 bytes in 1 blocks are possibly lost in loss record 2,456 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x42C81A: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:70)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 29 bytes in 1 blocks are possibly lost in loss record 2,457 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4434B2: C3PO_NS::Input::process_input_script() (input.cpp:108)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 29 bytes in 1 blocks are possibly lost in loss record 2,458 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x450D33: C3PO_NS::OperationFiltering::OperationFiltering(C3PO_NS::c3po*, char const*) (operation_filtering.cpp:65)
+==27200==    by 0x45B8A8: C3PO_NS::FilteringFavre::FilteringFavre(C3PO_NS::c3po*, char const*) (operation_filtering_Favre_I.cpp:61)
+==27200==    by 0x449244: C3PO_NS::OperationBase* C3PO_NS::OperationContainer::operation_creator<C3PO_NS::FilteringFavre>(C3PO_NS::c3po*, char*) (operation_container.cpp:87)
+==27200==    by 0x44744C: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:127)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 30 bytes in 1 blocks are possibly lost in loss record 2,500 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x42B8DD: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:61)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 30 bytes in 1 blocks are possibly lost in loss record 2,501 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x42BDFA: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:64)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 30 bytes in 1 blocks are possibly lost in loss record 2,502 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x42C15A: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:66)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 30 bytes in 1 blocks are possibly lost in loss record 2,503 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4A0ABD: C3PO_NS::Formula::Formula(char const*, char const*) (formula.cpp:66)
+==27200==    by 0x48EB92: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:151)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 30 bytes in 3 blocks are definitely lost in loss record 2,504 of 5,906
+==27200==    at 0x4C284B7: operator new[](unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x4108C3: C3PO_NS::c3poCSVinterface::readInput() const (c3po_CSV_interface.cpp:203)
+==27200==    by 0x41F69A: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:822)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 31 bytes in 1 blocks are possibly lost in loss record 2,551 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x42BFAA: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:65)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 31 bytes in 1 blocks are possibly lost in loss record 2,552 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x47BF88: C3PO_NS::SelectorContainer::SelectorContainer(C3PO_NS::c3po*) (selector_cellRegion.h:41)
+==27200==    by 0x42C4D7: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:68)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 32 bytes in 1 blocks are possibly lost in loss record 2,724 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x42BA97: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:62)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 32 bytes in 1 blocks are possibly lost in loss record 2,725 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x47BE88: C3PO_NS::SelectorContainer::SelectorContainer(C3PO_NS::c3po*) (selector_cellIJK.h:42)
+==27200==    by 0x42C4D7: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:68)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 32 bytes in 1 blocks are possibly lost in loss record 2,726 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x42C66A: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:69)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 32 bytes in 1 blocks are possibly lost in loss record 2,727 of 5,906
+==27200==    at 0x4C284B7: operator new[](unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x48D261: C3PO_NS::OperationSampling::createSampleVectors(unsigned int, unsigned int, unsigned int) (operation_sampling.cpp:353)
+==27200==    by 0x46334A: C3PO_NS::SamplingGeneral::process_input(QJsonObject) (operation_sampling_I_general.cpp:111)
+==27200==    by 0x48F127: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:188)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 33 bytes in 1 blocks are possibly lost in loss record 2,764 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x447E01: C3PO_NS::OperationContainer::OperationContainer(C3PO_NS::c3po*) (operation_binning.h:41)
+==27200==    by 0x42C327: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:67)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 33 bytes in 1 blocks are possibly lost in loss record 2,765 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x42C4BA: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:68)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 34 bytes in 1 blocks are possibly lost in loss record 2,812 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x42C30A: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:67)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 35 bytes in 1 blocks are possibly lost in loss record 2,855 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6181B: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x423402: std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) (new_allocator.h:130)
+==27200==    by 0x414E3A: C3PO_NS::c3poCSVinterface::parseFile() const (stl_vector.h:913)
+==27200==    by 0x41F6A2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:823)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 35 bytes in 1 blocks are possibly lost in loss record 2,856 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6181B: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x414744: C3PO_NS::c3poCSVinterface::parseFile() const (new_allocator.h:130)
+==27200==    by 0x41F6A2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:823)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 36 bytes in 1 blocks are possibly lost in loss record 2,895 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x47C191: C3PO_NS::SelectorContainer::SelectorContainer(C3PO_NS::c3po*) (selector_particleANN.h:41)
+==27200==    by 0x42C4D7: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:68)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 37 bytes in 1 blocks are possibly lost in loss record 2,926 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60787: std::string::_M_mutate(unsigned long, unsigned long, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60D2D: std::string::_M_replace_safe(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x47D5C0: C3PO_NS::Timer::Timer(C3PO_NS::c3po*) (basic_string.h:1131)
+==27200==    by 0x42B8FA: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:61)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 37 bytes in 1 blocks are possibly lost in loss record 2,927 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x47C097: C3PO_NS::SelectorContainer::SelectorContainer(C3PO_NS::c3po*) (selector_cellUnstruct.h:42)
+==27200==    by 0x42C4D7: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:68)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 37 bytes in 1 blocks are possibly lost in loss record 2,928 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x45BB65: C3PO_NS::FilteringFavre::process_input(QJsonObject) (operation_filtering_Favre_I.cpp:86)
+==27200==    by 0x4522FB: C3PO_NS::OperationFiltering::init(QJsonObject) (operation_filtering.cpp:103)
+==27200==    by 0x447514: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:132)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 37 bytes in 1 blocks are possibly lost in loss record 2,929 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60787: std::string::_M_mutate(unsigned long, unsigned long, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60D2D: std::string::_M_replace_safe(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4834A5: C3PO_NS::OperationBinning::OperationBinning(C3PO_NS::c3po*, char const*) (basic_string.h:1131)
+==27200==    by 0x4492C4: C3PO_NS::OperationBase* C3PO_NS::OperationContainer::operation_creator<C3PO_NS::OperationBinning>(C3PO_NS::c3po*, char*) (operation_container.cpp:87)
+==27200==    by 0x447778: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:145)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 38 bytes in 1 blocks are possibly lost in loss record 2,962 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60787: std::string::_M_mutate(unsigned long, unsigned long, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60D2D: std::string::_M_replace_safe(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x48910F: C3PO_NS::OperationSampling::OperationSampling(C3PO_NS::c3po*, char const*) (basic_string.h:1131)
+==27200==    by 0x464E48: C3PO_NS::SamplingGeneral::SamplingGeneral(C3PO_NS::c3po*, char const*) (operation_sampling_I_general.cpp:59)
+==27200==    by 0x449184: C3PO_NS::OperationBase* C3PO_NS::OperationContainer::operation_creator<C3PO_NS::SamplingGeneral>(C3PO_NS::c3po*, char*) (operation_container.cpp:87)
+==27200==    by 0x447683: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:136)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 39 bytes in 1 blocks are possibly lost in loss record 2,999 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D612D7: std::string::append(std::string const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x48D7E8: C3PO_NS::OperationSampling::createSampleVectors(unsigned int, unsigned int, unsigned int) (operation_sampling.cpp:362)
+==27200==    by 0x46334A: C3PO_NS::SamplingGeneral::process_input(QJsonObject) (operation_sampling_I_general.cpp:111)
+==27200==    by 0x48F127: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:188)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200== 
+==27200== 39 bytes in 1 blocks are definitely lost in loss record 3,000 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x8299851: opal_os_path (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x829B541: opal_path_access (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0xB65FB64: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_singleton.so)
+==27200==    by 0x85223EC: orte_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x620D2B8: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+==27200== 40 bytes in 1 blocks are possibly lost in loss record 3,067 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x447FF8: C3PO_NS::OperationContainer::OperationContainer(C3PO_NS::c3po*) (operation_filtering_Favre_I.h:37)
+==27200==    by 0x42C327: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:67)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 40 bytes in 1 blocks are possibly lost in loss record 3,068 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x42C9CA: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:71)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 40 bytes in 1 blocks are possibly lost in loss record 3,069 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6147E: std::string::append(char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x413F5F: C3PO_NS::c3poCSVinterface::createFileList() const (basic_string.h:1009)
+==27200==    by 0x41F66F: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:812)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 41 bytes in 1 blocks are possibly lost in loss record 3,129 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4482FB: C3PO_NS::OperationContainer::OperationContainer(C3PO_NS::c3po*) (operation_sampling_I_general.h:36)
+==27200==    by 0x42C327: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:67)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 41 bytes in 1 blocks are possibly lost in loss record 3,130 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x441CBC: C3PO_NS::Input::readFieldNames() (basic_string.h:1056)
+==27200==    by 0x443369: C3PO_NS::Input::process_input_script() (input.cpp:106)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 43 bytes in 1 blocks are possibly lost in loss record 3,207 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x448408: C3PO_NS::OperationContainer::OperationContainer(C3PO_NS::c3po*) (operation_sampling_I_particles.h:36)
+==27200==    by 0x42C327: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:67)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 44 bytes in 1 blocks are possibly lost in loss record 3,246 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x447EFE: C3PO_NS::OperationContainer::OperationContainer(C3PO_NS::c3po*) (operation_filtering_algebraic_I.h:37)
+==27200==    by 0x42C327: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:67)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 45 bytes in 1 blocks are possibly lost in loss record 3,286 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4481F3: C3PO_NS::OperationContainer::OperationContainer(C3PO_NS::c3po*) (operation_sampling_I_angleVecVec.h:36)
+==27200==    by 0x42C327: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:67)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 45 bytes in 1 blocks are possibly lost in loss record 3,287 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6147E: std::string::append(char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x455517: C3PO_NS::OperationFiltering::begin_of_step() (basic_string.h:1009)
+==27200==    by 0x429221: C3PO_NS::c3po::runFilters(int) const (operation_container.h:59)
+==27200==    by 0x41F449: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:759)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 45 bytes in 1 blocks are definitely lost in loss record 3,288 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x6CC50CF: __vasprintf_chk (in /lib64/libc-2.18.so)
+==27200==    by 0x6CC4FA1: __asprintf_chk (in /lib64/libc-2.18.so)
+==27200==    by 0x620D4FB: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+==27200== 47 bytes in 1 blocks are possibly lost in loss record 3,355 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x44850A: C3PO_NS::OperationContainer::OperationContainer(C3PO_NS::c3po*) (operation_sampling_I_twoPointCorr.h:36)
+==27200==    by 0x42C327: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:67)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 48 bytes in 1 blocks are possibly lost in loss record 3,489 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60787: std::string::_M_mutate(unsigned long, unsigned long, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60D2D: std::string::_M_replace_safe(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4308BC: C3PO_NS::DataStorage::DataStorage(C3PO_NS::c3po*) (basic_string.h:1131)
+==27200==    by 0x42C687: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:69)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 48 bytes in 1 blocks are possibly lost in loss record 3,490 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60787: std::string::_M_mutate(unsigned long, unsigned long, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60D2D: std::string::_M_replace_safe(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x483530: C3PO_NS::OperationBinning::OperationBinning(C3PO_NS::c3po*, char const*) (basic_string.h:1131)
+==27200==    by 0x4492C4: C3PO_NS::OperationBase* C3PO_NS::OperationContainer::operation_creator<C3PO_NS::OperationBinning>(C3PO_NS::c3po*, char*) (operation_container.cpp:87)
+==27200==    by 0x447778: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:145)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 48 bytes in 1 blocks are definitely lost in loss record 3,491 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x853A31A: orte_util_decode_pidmap (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x853B013: orte_util_nidmap_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0xB65FA43: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_ess_singleton.so)
+==27200==    by 0x85223EC: orte_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x620D2B8: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+==27200== 49 bytes in 1 blocks are possibly lost in loss record 3,513 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60787: std::string::_M_mutate(unsigned long, unsigned long, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60D2D: std::string::_M_replace_safe(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4308EC: C3PO_NS::DataStorage::DataStorage(C3PO_NS::c3po*) (basic_string.h:1131)
+==27200==    by 0x42C687: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:69)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 49 bytes in 2 blocks are definitely lost in loss record 3,514 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x8278565: opal_dss_copy_value (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0xC083BA2: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_db_hash.so)
+==27200==    by 0x854662F: orte_grpcomm_base_pack_modex_entries (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x8546D28: orte_grpcomm_base_modex (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x620D6C7: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+==27200== 49 bytes in 2 blocks are definitely lost in loss record 3,515 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x827D1EF: opal_dss_unpack_value (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x827ABD2: opal_dss_unpack_buffer (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x827BA2B: opal_dss_unpack (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x8545EAC: orte_grpcomm_base_update_modex_entries (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x854650A: orte_grpcomm_base_store_modex (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x8547401: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0xBC6D30B: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_rml_oob.so)
+==27200==    by 0xBE79C5D: mca_oob_tcp_msg_recv_complete (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_oob_tcp.so)
+==27200==    by 0xBE7AD77: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_oob_tcp.so)
+==27200==    by 0x82A55FC: opal_libevent2019_event_base_loop (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x82730CF: opal_progress (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200== 
+==27200== 51 bytes in 1 blocks are possibly lost in loss record 3,550 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60787: std::string::_M_mutate(unsigned long, unsigned long, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60D2D: std::string::_M_replace_safe(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4308D4: C3PO_NS::DataStorage::DataStorage(C3PO_NS::c3po*) (basic_string.h:1131)
+==27200==    by 0x42C687: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:69)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 51 bytes in 1 blocks are possibly lost in loss record 3,551 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6147E: std::string::append(char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x45B5CF: C3PO_NS::FilteringFavre::check_additional_fields() (basic_string.h:1009)
+==27200==    by 0x456A62: C3PO_NS::OperationFiltering::begin_of_step() (operation_filtering.cpp:473)
+==27200==    by 0x429221: C3PO_NS::c3po::runFilters(int) const (operation_container.h:59)
+==27200==    by 0x41F449: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:759)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 52 bytes in 1 blocks are possibly lost in loss record 3,575 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4A0AAE: C3PO_NS::Formula::Formula(char const*, char const*) (formula.cpp:66)
+==27200==    by 0x48EB92: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:151)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 53 bytes in 1 blocks are possibly lost in loss record 3,594 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60787: std::string::_M_mutate(unsigned long, unsigned long, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D60D2D: std::string::_M_replace_safe(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x48F266: C3PO_NS::OperationSampling::init(QJsonObject) (basic_string.h:1131)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 55 bytes in 1 blocks are possibly lost in loss record 3,617 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61D00: char* std::string::_S_construct<char const*>(char const*, char const*, std::allocator<char> const&, std::forward_iterator_tag) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D62117: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4480F3: C3PO_NS::OperationContainer::OperationContainer(C3PO_NS::c3po*) (operation_filtering_FavreRunningVariance_I.h:37)
+==27200==    by 0x42C327: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:67)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 57 bytes in 1 blocks are possibly lost in loss record 4,078 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x48992E: C3PO_NS::OperationSampling::registerInputFields(std::string, std::string, std::string) const (basic_string.h:1056)
+==27200==    by 0x463258: C3PO_NS::SamplingGeneral::process_input(QJsonObject) (operation_sampling_I_general.cpp:99)
+==27200==    by 0x48F127: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:188)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 67 bytes in 2 blocks are possibly lost in loss record 4,212 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6181B: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x414B87: C3PO_NS::c3poCSVinterface::parseFile() const (new_allocator.h:130)
+==27200==    by 0x41F6A2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:823)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 77 bytes in 1 blocks are possibly lost in loss record 4,255 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6147E: std::string::append(char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x419B69: C3PO_NS::c3poCSVinterface::createFilterFields(int) const (basic_string.h:1009)
+==27200==    by 0x41F43F: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:758)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 89 bytes in 2 blocks are possibly lost in loss record 4,430 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6147E: std::string::append(char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x455531: C3PO_NS::OperationFiltering::begin_of_step() (basic_string.h:1009)
+==27200==    by 0x429221: C3PO_NS::c3po::runFilters(int) const (operation_container.h:59)
+==27200==    by 0x41F449: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:759)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 93 bytes in 3 blocks are possibly lost in loss record 4,438 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D612D7: std::string::append(std::string const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x48C904: C3PO_NS::OperationSampling::createSampleVectors(unsigned int, unsigned int, unsigned int) (operation_sampling.cpp:326)
+==27200==    by 0x46334A: C3PO_NS::SamplingGeneral::process_input(QJsonObject) (operation_sampling_I_general.cpp:111)
+==27200==    by 0x48F127: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:188)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200== 
+==27200== 96 bytes in 3 blocks are possibly lost in loss record 4,934 of 5,906
+==27200==    at 0x4C284B7: operator new[](unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x48C369: C3PO_NS::OperationSampling::createSampleVectors(unsigned int, unsigned int, unsigned int) (operation_sampling.cpp:317)
+==27200==    by 0x46334A: C3PO_NS::SamplingGeneral::process_input(QJsonObject) (operation_sampling_I_general.cpp:111)
+==27200==    by 0x48F127: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:188)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 102 bytes in 3 blocks are possibly lost in loss record 4,947 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6181B: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::string const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x423402: std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&) (new_allocator.h:130)
+==27200==    by 0x414E01: C3PO_NS::c3poCSVinterface::parseFile() const (stl_vector.h:913)
+==27200==    by 0x41F6A2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:823)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 115 bytes in 3 blocks are possibly lost in loss record 4,997 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x4419F9: C3PO_NS::Input::readFieldNames() (basic_string.h:1056)
+==27200==    by 0x443369: C3PO_NS::Input::process_input_script() (input.cpp:106)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 115 bytes in 3 blocks are possibly lost in loss record 4,998 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x451375: C3PO_NS::OperationFiltering::registerFieldsFiltered(QJsonObject) const (basic_string.h:1056)
+==27200==    by 0x4522AD: C3PO_NS::OperationFiltering::init(QJsonObject) (operation_filtering.cpp:99)
+==27200==    by 0x447514: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:132)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 115 bytes in 3 blocks are possibly lost in loss record 4,999 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x41456F: C3PO_NS::c3poCSVinterface::parseFile() const (basic_string.h:1056)
+==27200==    by 0x41F6A2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:823)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 117 bytes in 1 blocks are possibly lost in loss record 5,004 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D612D7: std::string::append(std::string const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x43A74B: std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (basic_string.h:2369)
+==27200==    by 0x435A69: C3PO_NS::DataStorage::setFileName(std::string) (data_storage.cpp:489)
+==27200==    by 0x435F70: C3PO_NS::DataStorage::writeFields(std::string) (data_storage.cpp:237)
+==27200==    by 0x429AF2: C3PO_NS::c3po::runFilters(int) const (c3po.cpp:268)
+==27200==    by 0x41F449: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:759)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200== 
+==27200== 168 bytes in 3 blocks are possibly lost in loss record 5,204 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6147E: std::string::append(char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x418D95: C3PO_NS::c3poCSVinterface::createFilterFields(int) const (basic_string.h:1009)
+==27200==    by 0x41F43F: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:758)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 168 bytes in 3 blocks are possibly lost in loss record 5,205 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6147E: std::string::append(char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x418E01: C3PO_NS::c3poCSVinterface::createFilterFields(int) const (basic_string.h:1009)
+==27200==    by 0x41F43F: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:758)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 168 bytes in 3 blocks are possibly lost in loss record 5,206 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6147E: std::string::append(char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x418E69: C3PO_NS::c3poCSVinterface::createFilterFields(int) const (basic_string.h:1009)
+==27200==    by 0x41F43F: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:758)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 171 bytes in 3 blocks are possibly lost in loss record 5,208 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x5D605C8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D6119A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x5D61233: std::string::reserve(unsigned long) (in /usr/lib64/libstdc++.so.6.0.18)
+==27200==    by 0x489640: C3PO_NS::OperationSampling::registerInputFields(std::string, std::string, std::string) const (basic_string.h:1056)
+==27200==    by 0x463258: C3PO_NS::SamplingGeneral::process_input(QJsonObject) (operation_sampling_I_general.cpp:99)
+==27200==    by 0x48F127: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:188)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 448 (72 direct, 376 indirect) bytes in 1 blocks are definitely lost in loss record 5,782 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x82784DF: opal_dss_copy_value (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0xC083BA2: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_db_hash.so)
+==27200==    by 0x854662F: orte_grpcomm_base_pack_modex_entries (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x8546D28: orte_grpcomm_base_modex (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x620D6C7: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+==27200== 952 bytes in 1 blocks are definitely lost in loss record 5,840 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x6CC1E84: backtrace_symbols (in /lib64/libc-2.18.so)
+==27200==    by 0x82A0E2B: opal_backtrace_buffer (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x829E733: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x69BE9EF: ??? (in /lib64/libpthread-2.18.so)
+==27200==    by 0x4A00D6: C3PO_NS::Formula::normalize(std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >*, std::vector<std::vector<double, std::allocator<double> >*, std::allocator<std::vector<double, std::allocator<double> >*> >*) const (formula.cpp:426)
+==27200==    by 0x48939C: C3PO_NS::OperationSampling::middle_of_step() (operation_sampling.cpp:111)
+==27200==    by 0x42A194: C3PO_NS::c3po::runSampling() const (operation_container.h:64)
+==27200==    by 0x41F4B0: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:789)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 1,536 bytes in 3 blocks are possibly lost in loss record 5,867 of 5,906
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x42466D: std::vector<double, std::allocator<double> >::_M_insert_aux(__gnu_cxx::__normal_iterator<double*, std::vector<double, std::allocator<double> > >, double const&) (new_allocator.h:104)
+==27200==    by 0x489287: C3PO_NS::OperationSampling::insertSample(double, double*, unsigned int) (stl_vector.h:913)
+==27200==    by 0x46563E: C3PO_NS::SamplingGeneral::sample() (operation_sampling_I_general.cpp:241)
+==27200==    by 0x42A17E: C3PO_NS::c3po::runSampling() const (operation_container.h:63)
+==27200==    by 0x41F4B0: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:789)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 2,480 (80 direct, 2,400 indirect) bytes in 1 blocks are definitely lost in loss record 5,876 of 5,906
+==27200==    at 0x4C277AB: malloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0xC489E1C: mca_allocator_bucket_module_init (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_allocator_bucket.so)
+==27200==    by 0xCEA435F: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_pubsub_orte.so)
+==27200==    by 0x828D1DC: mca_base_components_open (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x6252463: mca_pml_base_open (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x620D5E2: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+==27200== LEAK SUMMARY:
+==27200==    definitely lost: 1,465 bytes in 22 blocks
+==27200==    indirectly lost: 2,777 bytes in 12 blocks
+==27200==      possibly lost: 4,970 bytes in 85 blocks
+==27200==    still reachable: 2,433,429 bytes in 6,925 blocks
+==27200==         suppressed: 0 bytes in 0 blocks
+==27200== Reachable blocks (those to which a pointer was found) are not shown.
+==27200== To see them, rerun with: --leak-check=full --show-reachable=yes
+==27200== 
+==27200== Use --track-origins=yes to see where uninitialised values come from
+==27200== ERROR SUMMARY: 191 errors from 85 contexts (suppressed: 2 from 2)
+==27200== 
+==27200== 1 errors in context 1 of 85:
+==27200== Invalid read of size 8
+==27200==    at 0x4A00C8: C3PO_NS::Formula::normalize(std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >*, std::vector<std::vector<double, std::allocator<double> >*, std::allocator<std::vector<double, std::allocator<double> >*> >*) const (stl_vector.h:771)
+==27200==    by 0x48939C: C3PO_NS::OperationSampling::middle_of_step() (operation_sampling.cpp:111)
+==27200==    by 0x42A194: C3PO_NS::c3po::runSampling() const (operation_container.h:64)
+==27200==    by 0x41F4B0: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:789)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200==  Address 0xef149f8 is 488 bytes inside a block of size 537 free'd
+==27200==    at 0x4C28FAC: operator delete(void*) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x48DF1F: C3PO_NS::OperationSampling::createSampleVectors(unsigned int, unsigned int, unsigned int) (basic_string.h:249)
+==27200==    by 0x46334A: C3PO_NS::SamplingGeneral::process_input(QJsonObject) (operation_sampling_I_general.cpp:111)
+==27200==    by 0x48F127: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:188)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 
+==27200== 1 errors in context 2 of 85:
+==27200== Conditional jump or move depends on uninitialised value(s)
+==27200==    at 0x4A1B3B: C3PO_NS::Formula::interpretFormula(int, int) const (formula.cpp:248)
+==27200==    by 0x48EC8E: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:152)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 
+==27200== 1 errors in context 3 of 85:
+==27200== Invalid read of size 1
+==27200==    at 0x4A155B: C3PO_NS::Formula::interpretFormula(int, int) const (formula.cpp:188)
+==27200==    by 0x48EC8E: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:152)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200==  Address 0xef11116 is 2 bytes after a block of size 4 alloc'd
+==27200==    at 0x4C27D49: operator new(unsigned long) (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x4A295F: std::vector<char, std::allocator<char> >::_M_insert_aux(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char const&) (new_allocator.h:104)
+==27200==    by 0x4A0728: C3PO_NS::Formula::ParseFormula() const (stl_vector.h:913)
+==27200==    by 0x4A0B8C: C3PO_NS::Formula::Formula(char const*, char const*) (formula.cpp:76)
+==27200==    by 0x48EB92: C3PO_NS::OperationSampling::init(QJsonObject) (operation_sampling.cpp:151)
+==27200==    by 0x447747: C3PO_NS::OperationContainer::parse_command(int, char const* const*) (operation_container.cpp:141)
+==27200==    by 0x443A89: C3PO_NS::Input::process_input_script() (c3po_base_interface_vector.h:91)
+==27200==    by 0x42CB7D: C3PO_NS::c3po::c3po(int, char**, ompi_communicator_t*) (c3po.cpp:73)
+==27200==    by 0x413C40: C3PO_NS::c3poCSVinterface::c3poCSVinterface(ompi_communicator_t*) (c3po_CSV_interface.cpp:79)
+==27200==    by 0x40FDFE: main (main.cpp:48)
+==27200== 
+==27200== 
+==27200== 1 errors in context 4 of 85:
+==27200== Syscall param writev(vector[...]) points to uninitialised byte(s)
+==27200==    at 0x6CAD2D7: writev (in /lib64/libc-2.18.so)
+==27200==    by 0xBE79282: mca_oob_tcp_msg_send_handler (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_oob_tcp.so)
+==27200==    by 0xBE7A072: mca_oob_tcp_peer_send (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_oob_tcp.so)
+==27200==    by 0xBE7D2E2: mca_oob_tcp_send_nb (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_oob_tcp.so)
+==27200==    by 0xBC6E78C: orte_rml_oob_send_buffer_nb (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_rml_oob.so)
+==27200==    by 0xBA681E5: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_grpcomm_bad.so)
+==27200==    by 0x8546E6C: orte_grpcomm_base_modex (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x620D6C7: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200==  Address 0xa828917 is 119 bytes inside a block of size 256 alloc'd
+==27200==    at 0x4C29B7E: realloc (in /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27200==    by 0x8277B89: opal_dss_buffer_extend (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x82788DD: opal_dss_copy_payload (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-pal.so.5.0.2)
+==27200==    by 0x854779D: orte_grpcomm_base_pack_collective (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0xBA681C3: ??? (in /usr/lib64/mpi/gcc/openmpi/lib64/openmpi/mca_grpcomm_bad.so)
+==27200==    by 0x8546E6C: orte_grpcomm_base_modex (in /usr/lib64/mpi/gcc/openmpi/lib64/libopen-rte.so.5.0.2)
+==27200==    by 0x620D6C7: ompi_mpi_init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x6228FE2: PMPI_Init (in /usr/lib64/mpi/gcc/openmpi/lib64/libmpi.so.1.1.2)
+==27200==    by 0x40FDCA: main (main.cpp:44)
+==27200== 
+==27200== 
+==27200== 2 errors in context 5 of 85:
+==27200== Invalid read of size 8
+==27200==    at 0x4A00D7: C3PO_NS::Formula::normalize(std::vector<std::vector<double, std::allocator<double> >, std::allocator<std::vector<double, std::allocator<double> > > >*, std::vector<std::vector<double, std::allocator<double> >*, std::allocator<std::vector<double, std::allocator<double> >*> >*) const (formula.cpp:449)
+==27200==    by 0x48939C: C3PO_NS::OperationSampling::middle_of_step() (operation_sampling.cpp:111)
+==27200==    by 0x42A194: C3PO_NS::c3po::runSampling() const (operation_container.h:64)
+==27200==    by 0x41F4B0: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:789)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==27200== 
+==27200== 
+==27200== 36 errors in context 6 of 85:
+==27200== Conditional jump or move depends on uninitialised value(s)
+==27200==    at 0x49ABCF: C3PO_NS::SelectorCellIJK::RunSelector() (selector_cellIJK.cpp:216)
+==27200==    by 0x429703: C3PO_NS::c3po::runFilters(int) const (c3po.cpp:249)
+==27200==    by 0x41F449: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:759)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 
+==27200== 36 errors in context 7 of 85:
+==27200== Conditional jump or move depends on uninitialised value(s)
+==27200==    at 0x49ABFE: C3PO_NS::SelectorCellIJK::RunSelector() (selector_cellIJK.cpp:216)
+==27200==    by 0x429703: C3PO_NS::c3po::runFilters(int) const (c3po.cpp:249)
+==27200==    by 0x41F449: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:759)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+==27200== 
+==27200== 36 errors in context 8 of 85:
+==27200== Conditional jump or move depends on uninitialised value(s)
+==27200==    at 0x49ABA0: C3PO_NS::SelectorCellIJK::RunSelector() (selector_cellIJK.cpp:216)
+==27200==    by 0x429703: C3PO_NS::c3po::runFilters(int) const (c3po.cpp:249)
+==27200==    by 0x41F449: C3PO_NS::c3poCSVinterface::runFilter(int) const (c3po_CSV_interface.cpp:759)
+==27200==    by 0x41F495: C3PO_NS::c3poCSVinterface::runC3po() const (c3po_CSV_interface.cpp:787)
+==27200==    by 0x41F6B2: C3PO_NS::c3poCSVinterface::FLUENTrunC3PO() const (c3po_CSV_interface.cpp:825)
+==27200==    by 0x40FE16: main (main.cpp:52)
+==27200== 
+--27200-- 
+--27200-- used_suppression:      2 dl-hack3-cond-1
+==27200== 
+==27200== ERROR SUMMARY: 191 errors from 85 contexts (suppressed: 2 from 2)

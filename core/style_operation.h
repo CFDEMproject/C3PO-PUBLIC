@@ -1,0 +1,6 @@
+#include "operation_binning.h"
+#include "operation_filtering_topHat.h"
+#include "operation_sampling_I_angleVecVec.h"
+#include "operation_sampling_I_general.h"
+#include "operation_sampling_I_particles.h"
+#include "operation_sampling_I_twoPointCorr.h"

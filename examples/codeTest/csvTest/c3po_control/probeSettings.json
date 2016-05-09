@@ -1,0 +1,17 @@
+{
+
+ "probeSettings":
+ {
+ 
+  "probeNames": " CSVprobes",
+  
+  "CSVprobes":
+  {
+  
+   "filters":"all",
+   "readFromJson": false        
+  } 
+ 
+ }
+
+}

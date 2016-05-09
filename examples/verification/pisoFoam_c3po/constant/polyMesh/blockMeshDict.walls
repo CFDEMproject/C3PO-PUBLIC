@@ -1,0 +1,138 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.6                                   |
+|   \\  /    A nd           | Web:      http://www.OpenFOAM.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1;
+
+xInlet -2;
+xOutlet  10;
+xResolution 120; 
+
+wallLength  10; //dp = 2, i.e., 4 diameters per box
+wallResolution 120;
+
+/*vertices
+(
+    (0 -8 -0.05)
+    (1 -8 -0.05)
+    (1 4 -0.05)
+    (0 4 -0.05)
+    (0 -8 0.05)
+    (1 -8 0.05)
+    (1 4 0.05)
+    (0 4 0.05)
+);*/
+
+vertices
+(
+    ($xInlet    -2 -2)
+    ($xOutlet -2 -2)
+    ($xOutlet $wallLength -2)
+    ($xInlet    $wallLength -2)
+    ($xInlet    -2 $wallLength)
+    ($xOutlet -2 $wallLength)
+    ($xOutlet $wallLength $wallLength)
+    ($xInlet    $wallLength $wallLength)
+);
+
+blocks          
+(
+    hex (0 1 2 3 4 5 6 7) ($xResolution $wallResolution $wallResolution) simpleGrading (1 1 1)
+    //hex (0 1 2 3 4 5 6 7) (120 480 1) simpleGrading (1 1 1)
+);
+
+edges           
+(
+);
+
+boundary         
+(
+    periodic_z0
+    {
+        type patch;        
+/*         type wall;*/
+        
+        faces
+        (
+         (0 3 2 1)
+        );
+    }
+    periodic_z1
+    {
+        type patch;
+/*         type wall;*/
+      
+        faces
+        (
+         (4 5 6 7)
+        );
+    }
+
+    periodic_y0
+    {   
+        type patch;
+/*        type wallAMI;*/
+     
+/*        type wallAMI;*/
+//        neighbourPatch periodic_x0;
+/*        transform translational;*/
+/*        separationVector (-0.008 0 0);*/
+        faces
+        (
+        (2 6 5 1)
+       );
+    }
+
+    periodic_y1
+    {
+         type patch;
+/*        type wallAMI;*/
+     
+/*        transform translational;*/
+/*        separationVector (0.008 0 0);*/
+        faces
+        (
+        (0 4 7 3)
+        );
+    }
+
+    periodic_x0
+    {
+        type patch;
+/*        transform translational;*/
+/*        separationVector (0 0.008 0);*/
+        faces
+        (
+        (1 5 4 0)
+        );
+    }
+
+    periodic_x1
+    {
+       type patch;
+/*        transform translational;*/
+/*        separationVector (0 -0.008 0);*/
+        faces
+        (
+        (3 7 6 2)
+        );
+    }
+);
+
+mergePatchPairs 
+(
+);
+
+// ************************************************************************* //

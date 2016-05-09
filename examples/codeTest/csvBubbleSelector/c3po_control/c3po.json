@@ -1,0 +1,34 @@
+{
+   "mainSettings":
+   {
+        "doFiltering": false,
+        "doSampling":  false,
+        "doBinning":   false,
+        "dumpFormat": "json",   
+        "FieldsToRegister":
+        {
+            "Vectorfields": "",
+            "Scalarfields": "voidfraction " 
+        },
+         "filterBCs":
+        {
+        "x":"wall",
+        "y":"wall",
+        "z":"wall"
+        },
+        "verbose": false,
+        "useProbes": false,
+        "storageWriteFields"    :  false,
+        "storageWriteParticles" :  false,
+        "interfaceWriteFields" :  false
+   },
+  
+   "myBubbles":
+   {
+    "fieldForSelection":"voidfraction",
+    "threshold":0.5,
+    "identifyBelowThreshold": false,
+    "updateRegionsEachStep": false
+   
+   }
+}    

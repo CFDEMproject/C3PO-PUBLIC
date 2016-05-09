@@ -1,0 +1,88 @@
+#!/bin/sh
+#----------------------------------*-sh-*--------------------------------------
+# CPPPO
+# Stefan Radl, Federico Municchi
+# May 2016
+#------------------------------------------------------------------------------
+#
+# Script
+#     etc/bashrc
+#
+# Description
+#     Startup file for CPPPO exporting environment variables
+#     Sourced  ~/.bashrc
+#
+#- adapt this and add to ./bashrc
+#- you can test the correctness using c3poSystemTest.sh
+##================================================#
+##- source c3po env vars
+#C3PO - examples of paths
+#export C3PO_SRC_DIR  = $HOME/C3PO
+#export C3PO_QT5_LIB  = $C3PO_QT5_DIR/lib
+#export C3PO_QT5_INC  = $C3PO_QT5_DIR/inc
+#export C3PO_HDF5_DIR = /usr/include
+#export C3PO_HDF5_LIB = /usr/lib64
+#export C3PO_HDF5_INC = /usr/include
+#export USEHDF5       = true
+#. $C3PO_SRC_DIR/etc/bashrc
+
+#If you are using OpenFOAM without CFDEMCoupling, you should also add
+#export C3PO_ADD_LIBS_DIR  = $C3PO_SRC_DIR/etc
+#export C3PO_ADD_LIBS_NAME = additionalLibs_3.0.x
+#================================================#
+#------------------------------------------------------------------------------
+#- additional envs
+export C3PO_EXAMPLE_DIR=$C3PO_SRC_DIR/examples
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$C3PO_QT5_LIB:$C3PO_HDF5_LIB
+#------------------------------------------------------------------------------
+#- shortcut to src path
+alias c3poSrc='cd $C3PO_SRC_DIR'
+
+#- shortcut to applications
+alias c3poApp='cd $C3PO_SRC_DIR/applications'
+
+#- shortcut to examples
+alias c3poEx='cd $C3PO_SRC_DIR/examples'
+
+#- shortcut to documentation path
+alias c3poDoc='cd $C3PO_SRC_DIR/doc'
+
+#- shortcut to system test
+alias c3poSysTest='bash $C3PO_SRC_DIR/etc/c3poSystemTest.sh'
+
+#- shortcut to clean C3PO
+alias c3poClean='bash $C3PO_SRC_DIR/cleanMe'
+
+#- shortcut to compile C3PO
+alias c3poComp='bash $C3PO_SRC_DIR/compileMe'
+
+#Additional libs required for Compilation of CPPPO
+if [[ $C3PO_ADD_LIBS_DIR == "" ]]; then
+    export C3PO_ADD_LIBS_DIR=$CFDEM_ADD_LIBS_DIR
+else
+    echo "using C3PO_ADD_LIBS_DIR=$C3PO_ADD_LIBS_DIR defined by user."
+fi
+
+if [[ $C3PO_ADD_LIBS_NAME == "" ]]; then
+    export C3PO_ADD_LIBS_NAME=$CFDEM_ADD_LIBS_NAME
+fi
+
+# detect OF version
+if  ! [ $WM_PROJECT_VERSION == "" ] ; then
+
+ if  ! [ $CFDEM_WM_PROJECT_VERSION == "" ] ; then
+
+  if [ $WM_PROJECT_VERSION == "3.0.x" ]; then
+    export CFDEM_WM_PROJECT_VERSION=30
+  elif [ $WM_PROJECT_VERSION == "2.4.x" ]; then
+    export CFDEM_WM_PROJECT_VERSION=24
+  else
+  echo "------------------------------------------------"
+  echo "WARNING: Your OpenFOAM version is not valid"
+  echo "         for CPPPO! Valid versions are:"
+  echo "         3.0.x"
+  echo "         2.4.x"
+  echo "-------------------------------------------------"
+  fi
+ fi
+fi

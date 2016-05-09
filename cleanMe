@@ -1,0 +1,36 @@
+#!/bin/bash
+cd $C3PO_SRC_DIR
+currDir=$PWD
+
+# 1 - the core
+cd $currDir
+cd core
+make clean-all
+rm log.*
+
+# 2 - the interface modules
+cd $currDir
+cd interface_OF
+wclean
+cd $currDir
+cd interface_CSV
+make clean-all
+rm log.*
+
+# 3 - the (test) applications
+cd $currDir
+cd applications/meshFilter/
+wclean
+cd $currDir
+cd applications/stokesFilter/
+wclean
+cd $currDir
+cd applications/pisoFoam_c3po/
+wclean
+cd $currDir
+cd applications/irrotationalFilter/
+wclean
+cd $currDir
+
+
+
