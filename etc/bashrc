@@ -57,20 +57,20 @@ alias c3poClean='bash $C3PO_SRC_DIR/cleanMe'
 alias c3poComp='bash $C3PO_SRC_DIR/compileMe'
 
 #Additional libs required for Compilation of CPPPO
-if [[ $C3PO_ADD_LIBS_DIR == "" ]]; then
+if [[ -z $C3PO_ADD_LIBS_DIR ]]; then
     export C3PO_ADD_LIBS_DIR=$CFDEM_ADD_LIBS_DIR
 else
     echo "using C3PO_ADD_LIBS_DIR=$C3PO_ADD_LIBS_DIR defined by user."
 fi
 
-if [[ $C3PO_ADD_LIBS_NAME == "" ]]; then
+if [[ -z $C3PO_ADD_LIBS_NAME ]]; then
     export C3PO_ADD_LIBS_NAME=$CFDEM_ADD_LIBS_NAME
 fi
 
 # detect OF version
-if  ! [ $WM_PROJECT_VERSION == "" ] ; then
+if  ! [ -z $WM_PROJECT_VERSION ] ; then
 
- if  ! [ $CFDEM_WM_PROJECT_VERSION == "" ] ; then
+ if  ! [ -z $CFDEM_WM_PROJECT_VERSION == "" ] ; then
 
   if [ $WM_PROJECT_VERSION == "3.0.x" ]; then
     export CFDEM_WM_PROJECT_VERSION=30
