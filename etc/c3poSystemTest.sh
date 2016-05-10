@@ -3,7 +3,7 @@
 #===================================================================#
 # sytsem settings test routine for c3po project 
 #===================================================================#
-source ./c3poFunctions.sh
+source $C3PO_SRC_DIR/etc/c3poFunctions.sh
 
 
 #- show gcc settings
@@ -43,7 +43,7 @@ echo ""
 if checkDir "$C3PO_ADD_LIBS_DIR"
  then
  echo "using additional libraries defined in: "
- echo $C3PO_ADD_LIBS_DIR"/additionalLibs"
+ echo $C3PO_ADD_LIBS_DIR"/$C3PO_ADD_LIBS_NAME"
 else
  echo "ERROR: it was not possible to find a valid definition of C3PO_ADD_LIBS_DIR"
  echo "please set this environment variable"
