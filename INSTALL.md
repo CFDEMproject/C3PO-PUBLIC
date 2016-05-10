@@ -79,11 +79,11 @@ Be sure you have correctly set up Octave (including `JSONLAB`) for post processi
 ### Environment Variables
 Be sure you have correctly set the variables C3PO_SRC_DIR, e.g., in your .bashrc you should have:
 
->export C3PO_ADD_LIBS_DIR=$HOME/CFDEM/C3PO/etc
+>export C3PO_SRC_DIR=$HOME/CFDEM/CFDEMcoupling-YOURCFDEMDISTRO/src/c3po
+
+>export C3PO_ADD_LIBS_DIR=$C3PO_SRC_DIR/etc
 
 >export C3PO_ADD_LIBS_NAME=additionalLibs_3.0.x
-
->export C3PO_SRC_DIR=$HOME/CFDEM/CFDEMcoupling-YOURCFDEMDISTRO/src/c3po
 
 >export C3PO_QT5_DIR=$HOME/Qt/5.3/gcc_64
 
@@ -96,6 +96,8 @@ Be sure you have correctly set the variables C3PO_SRC_DIR, e.g., in your .bashrc
 >export C3PO_HDF5_LIB=$C3PO_HDF5_DIR/lib
 
 >export C3PO_HDF5_INC=$C3PO_HDF5_DIR/include
+
+>export USEHFD5=true
 
 >export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$C3PO_QT5_LIB:$C3PO_HDF5_LIB
 
@@ -113,6 +115,8 @@ In case the HDF5 library is not linked, the following variables are not necessar
 >C3PO_HDF5_LIB
 
 >C3PO_HDF5_INC
+
+>USEHFD5
 
 
 The C3PO_ADD_LIBS_DIR must point to an existing directory of the user's choice. The directory must contain a file called "additionalLibs" that is used to defined which libraries are linked the OpenFOAM(R)-type applications in the CPPPO package. The user has to provide this file

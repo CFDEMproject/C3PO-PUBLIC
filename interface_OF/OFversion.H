@@ -1,6 +1,6 @@
-#if(C3POWMPROJECTVERSION == 24)
+#if(CFDEMWMPROJECTVERSION == 24)
     #define version24
-#elif(C3POWMPROJECTVERSION == 30)
+#elif(CFDEMWMPROJECTVERSION == 30)
     #define version30
 #endif
 

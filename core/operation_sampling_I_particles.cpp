@@ -49,10 +49,10 @@ License
 
 #ifdef H5_LIB
 #include "h5_c3po.h"
-#define PI 3.14159265359
 using namespace H5_C3PO_NS;
 #endif
 
+#define PI 3.14159265359
 using namespace C3PO_NS;
 
 
