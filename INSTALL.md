@@ -79,27 +79,27 @@ Be sure you have correctly set up Octave (including `JSONLAB`) for post processi
 ### Environment Variables
 Be sure you have correctly set the variables C3PO_SRC_DIR, e.g., in your .bashrc you should have:
 
->export C3PO_SRC_DIR=$HOME/C3PO-PUBLIC  #Should point to your C3PO folder
+>export C3PO_SRC_DIR=$HOME/C3PO-PUBLIC  
 
->export C3PO_ADD_LIBS_DIR=$C3PO_SRC_DIR/etc  #Can be left as it is
+>export C3PO_ADD_LIBS_DIR=$C3PO_SRC_DIR/etc  
 
->export C3PO_ADD_LIBS_NAME=additionalLibs_3.0.x #Should match your OpenFOAM version
+>export C3PO_ADD_LIBS_NAME=additionalLibs_3.0.x 
 
->export C3PO_QT5_DIR=$HOME/Qt/5.3/gcc_64 #Should point to the Qt5 directory
+>export C3PO_QT5_DIR=$HOME/Qt/5.3/gcc_64 
 
->export C3PO_QT5_LIB=$C3PO_QT5_DIR/lib #Should point to the Qt5 library directory
+>export C3PO_QT5_LIB=$C3PO_QT5_DIR/lib 
 
->export C3PO_QT5_INC=$C3PO_QT5_DIR/inc #Should point to the Qt5 include direcory
+>export C3PO_QT5_INC=$C3PO_QT5_DIR/include 
 
->export C3PO_HDF5_DIR='pathToTheHDF5InstallationDir' #Should point to the hdf5 directory
+>export C3PO_HDF5_DIR='pathToTheHDF5InstallationDir' 
 
->export C3PO_HDF5_LIB=$C3PO_HDF5_DIR/lib #Should point to the hdf5 library directory
+>export C3PO_HDF5_LIB=$C3PO_HDF5_DIR/lib 
 
->export C3PO_HDF5_INC=$C3PO_HDF5_DIR/include #Should point to the hdf5 include directory
+>export C3PO_HDF5_INC=$C3PO_HDF5_DIR/include 
 
 >export USEHFD5=true 
 
->export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$C3PO_QT5_LIB:$C3PO_HDF5_LIB #Add Qt5 and hdf5 libraries to path
+>export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$C3PO_QT5_LIB:$C3PO_HDF5_LIB 
 
 >. $C3PO_SRC_DIR/etc/bashrc
 
