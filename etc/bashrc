@@ -97,12 +97,10 @@ if ! [ -z "$WM_PROJECT_VERSION" ] ; then
 fi
 
 
-
-
 # detect OF version
 if  ! [ -z $WM_PROJECT_VERSION ] ; then
 
- if  ! [ -z $CFDEM_WM_PROJECT_VERSION  ] ; then
+ if   [ -z $CFDEM_WM_PROJECT_VERSION  ] ; then
 
   if [ $WM_PROJECT_VERSION == "3.0.x" ]; then
     export CFDEM_WM_PROJECT_VERSION=30
@@ -115,6 +113,6 @@ if  ! [ -z $WM_PROJECT_VERSION ] ; then
   echo "         3.0.x"
   echo "         2.4.x"
   echo "-------------------------------------------------"
-  fi
+  fi  
  fi
 fi

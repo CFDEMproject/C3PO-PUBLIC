@@ -19,9 +19,6 @@ rm log.*
 
 # 3 - the (test) applications
 cd $currDir
-cd applications/meshFilter/
-wclean
-cd $currDir
 cd applications/stokesFilter/
 wclean
 cd $currDir
@@ -31,6 +28,3 @@ cd $currDir
 cd applications/irrotationalFilter/
 wclean
 cd $currDir
-
-
-
