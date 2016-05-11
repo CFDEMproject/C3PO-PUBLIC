@@ -1,13 +1,16 @@
 #paths for additional libraries
 CFDEM_ADD_LIB_PATHS = \
 -L$(C3PO_QT5_LIB) \
+-L$(C3PO_HDF5_LIB) \
 -L$(CFDEM_POEMSLIB_PATH) \
 -L$(MPI_ARCH_PATH)/lib \
 
 # additional libraries to be linked to solvers
 CFDEM_ADD_LIBS = \
 -lc3po \
+-lhdf5_cpp \
 -lQt5Core \
+-lhdf5 \
 
 
 

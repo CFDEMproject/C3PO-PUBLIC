@@ -1,6 +1,0 @@
-operation   filteringTopHat    Filter                #Favre averaging       
-       
-selector    cellUnstruct                   myCell0        #selectors for cell index calculation#
-
-selector    filter                     filter1          #filters named as their filter-size
-
