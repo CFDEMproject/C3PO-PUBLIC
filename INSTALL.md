@@ -124,9 +124,9 @@ In case the HDF5 library is not linked, the following variables are not necessar
 The C3PO_ADD_LIBS_DIR must point to an existing directory of the user's choice. The directory must contain a file called "additionalLibs" that is used to defined which libraries are linked the OpenFOAM(R)-type applications in the CPPPO package. The user has to provide this file
 when OpenFOAM(R) applications are linked.
 The user should also set C3PO_ADD_LIBS_NAME accordingly to its additionalLibs file.
-Template are available in etc/ .
+Templates are available in $C3PO_SRC_DIR/etc.
 
-WARNING: In case the compiler can not find the HDF5 library path try replacing /lib with /lib64 in C3PO_HDF5_LIB:
+WARNING: In case the compiler cannot find the HDF5 library path try replacing /lib with /lib64 in C3PO_HDF5_LIB:
 
 >export C3PO_HDF5_LIB=$C3PO_HDF5_DIR/lib64
 
