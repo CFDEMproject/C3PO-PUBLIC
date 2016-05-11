@@ -103,6 +103,8 @@ Be sure you have correctly set the variables C3PO_SRC_DIR, e.g., in your .bashrc
 
 >. $C3PO_SRC_DIR/etc/bashrc
 
+Remember to check the environment variables carefully since they may be different in your system!
+
 In case OpenFOAM(R) is not linked, the following variables are not necessary:
 >C3PO_ADD_LIBS_DIR
 
