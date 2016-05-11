@@ -1,2 +1,0 @@
-OBJECTS = \
-$(OBJECTS_DIR)/pisoFoam_c3po.o

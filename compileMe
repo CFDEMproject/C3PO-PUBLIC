@@ -121,12 +121,6 @@ else
   wmake
   
  
-   if [[ "$CFDEM_SRC_DIR" = "" ]] || [[ "$1" != "yes-CFDEM" ]]; then
-    echo '***WARNING***'
-    echo 'Could not find a valid definition for "CFDEM_SRC_DIR" or "yes-CFDEM" was NOT set. Will NOT install CFDEM applications.'
-    echo '***WARNING***'
-    echo ''
-  else
     cd $currDir
     cd applications/pisoFoam_c3po/
 
@@ -142,7 +136,6 @@ else
     fi
     wmake
     cd $currDir
-  fi
   
 
 fi
