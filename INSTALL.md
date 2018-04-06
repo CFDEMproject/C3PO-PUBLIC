@@ -168,7 +168,7 @@ C3PO will be build as library. Currently, only one linux architecture is support
 
 >make makelib
 
->make - Makefile.lib fedora_fpic
+>make -f Makefile.lib fedora_fpic
 
 Note, a
 
