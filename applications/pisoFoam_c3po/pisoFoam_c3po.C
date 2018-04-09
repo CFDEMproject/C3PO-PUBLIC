@@ -46,7 +46,13 @@ Description
 #include "fvCFD.H"
 #include "singlePhaseTransportModel.H"
 #include "turbulenceModel.H"
-#include "fvIOoptionList.H"
+
+#if defined(versionv1606plus) || defined(version40)
+    #include "fvOptions.H"
+#else
+    #include "fvIOoptionList.H"
+#endif
+
 #include "cellSet.H"
 #include "mpi.h"
 

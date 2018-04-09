@@ -4,7 +4,7 @@
         "doFiltering": true,
         "doSampling":  false,
         "doBinning":   false,
-        "dumpFormat": "hdf5",
+        "dumpFormat": "json",
         "verbose": false,
         "FieldsToRegister":
         {
@@ -20,7 +20,7 @@
         "useProbes" : true,
         "storageWriteFields"    :  false,
         "storageWriteParticles" :  true,
-         "interfaceWriteFields" : false
+        "interfaceWriteFields" :   false
      
    },
   

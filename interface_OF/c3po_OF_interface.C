@@ -45,6 +45,8 @@ License
 #include "interpolationCellPoint.H"
 #include "interpolationCell.H"
 
+#include "OFversion.H"
+
 using namespace C3PO_NS;
 
 /* ----------------------------------------------------------------------
@@ -247,9 +249,11 @@ void c3poOFInterface::createGradients()
      
      volScalarField * shearStress_ = new volScalarField(name.c_str(),baseField->component(0));
      
-     
-     
+#ifdef version40
+     shearStress_->ref()=0;
+#else
      shearStress_->internalField()=0;
+#endif
      
     
      forAll(mesh_.cells(),cellI)
