@@ -68,15 +68,8 @@ elif [[ $WM_PROJECT_VERSION == 3.0.* ]]; then
     export CFDEM_WM_PROJECT_VERSION=30
 elif [[ $WM_PROJECT_VERSION == 2.4.* ]]; then
     export CFDEM_WM_PROJECT_VERSION=24
-    cfdemecho "************************************"
-    cfdemecho "WARNING from your CFDEM code!"
-    cfdemecho "WARNING: Coupling with your OpenFOAM(R) version is not officially supported!"
-    cfdemecho "In doubt switch to OpenFOAM(R) 5.x."
-    cfdemecho "************************************"
-    sleep 1.5
 elif [[ $WM_PROJECT_VERSION == "3.2" && $WM_FORK == "extend" ]]; then
     export CFDEM_WM_PROJECT_VERSION=132
-    sleep 1.5
 else
     clear
     echo "Variable WM_PROJECT_VERSION is not set. please first source OpenFOAM's bashrc file!"
